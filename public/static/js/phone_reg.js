@@ -1,0 +1,505 @@
+var phoneRegMap = [{
+    value: "CN",
+    mobileCode: "86",
+    cnName: "\u4e2d\u56fd\u5927\u9646",
+    enName: "China",
+    RE: /^(86){0,1}\-?1[3,4,5,7,8]\d{9}$/,
+    isTop: !0
+}, {
+    value: "HK",
+    mobileCode: "852",
+    cnName: "\u9999\u6e2f",
+    enName: "Hong Kong",
+    RE: /^(852){1}\-?0{0,1}[1,5,6,9](?:\d{7}|\d{8}|\d{12})$/,
+    isTop: !0
+}, {
+    value: "MO",
+    mobileCode: "853",
+    cnName: "\u6fb3\u95e8",
+    enName: "Macau",
+    RE: /^(853){1}\-?6\d{7}$/,
+    isTop: !0
+}, {
+    value: "TW",
+    mobileCode: "886",
+    cnName: "\u53f0\u6e7e",
+    enName: "Taiwan",
+    RE: /^(886){1}\-?0{0,1}[6,7,9](?:\d{7}|\d{8}|\d{10})$/,
+    isTop: !0
+}, {
+    value: "KH",
+    mobileCode: "855",
+    cnName: "\u67ec\u57d4\u5be8",
+    enName: "Cambodia",
+    group: "\u4e9a\u6d32",
+    RE: /^(855){1}\-?\d{7,11}/
+}, {
+    value: "IN",
+    mobileCode: "91",
+    cnName: "\u5370\u5ea6",
+    enName: "India",
+    group: "\u4e9a\u6d32",
+    RE: /^(91){1}\-?\d{7,11}/
+}, {
+    value: "ID",
+    mobileCode: "62",
+    cnName: "\u5370\u5ea6\u5c3c\u897f\u4e9a",
+    enName: "Indonesia",
+    group: "\u4e9a\u6d32",
+    RE: /^(62){1}\-?[2-9]\d{7,11}$/
+}, {
+    value: "IL",
+    mobileCode: "972",
+    cnName: "\u4ee5\u8272\u5217",
+    enName: "Israel",
+    group: "\u4e9a\u6d32",
+    RE: /^(972){1}\-?\d{7,11}/
+}, {
+    value: "JP",
+    mobileCode: "81",
+    cnName: "\u65e5\u672c",
+    enName: "Japan",
+    group: "\u4e9a\u6d32",
+    RE: /^(81){1}\-?0{0,1}[7,8,9](?:\d{8}|\d{9})$/
+}, {
+    value: "JO",
+    mobileCode: "962",
+    cnName: "\u7ea6\u65e6",
+    enName: "Jordan",
+    group: "\u4e9a\u6d32",
+    RE: /^(962){1}\-?\d{7,11}/
+}, {
+    value: "KG",
+    mobileCode: "996",
+    cnName: "\u5409\u5c14\u5409\u65af\u65af\u5766",
+    enName: "Kyrgyzstan",
+    group: "\u4e9a\u6d32",
+    RE: /^(996){1}\-?\d{7,11}/
+}, {
+    value: "MY",
+    mobileCode: "60",
+    cnName: "\u9a6c\u6765\u897f\u4e9a",
+    enName: "Malaysia",
+    group: "\u4e9a\u6d32",
+    RE: /^(60){1}\-?1\d{8,9}$/
+}, {
+    value: "MV",
+    mobileCode: "960",
+    cnName: "\u9a6c\u5c14\u4ee3\u592b",
+    enName: "Maldives",
+    group: "\u4e9a\u6d32",
+    RE: /^(960){1}\-?\d{7,11}/
+}, {
+    value: "MN",
+    mobileCode: "976",
+    cnName: "\u8499\u53e4",
+    enName: "Mongolia",
+    group: "\u4e9a\u6d32",
+    RE: /^(976){1}\-?\d{7,11}/
+}, {
+    value: "PH",
+    mobileCode: "63",
+    cnName: "\u83f2\u5f8b\u5bbe",
+    enName: "Philippines",
+    group: "\u4e9a\u6d32",
+    RE: /^(63){1}\-?[24579](\d{7,9}|\d{12})$/
+}, {
+    value: "QA",
+    mobileCode: "974",
+    cnName: "\u5361\u5854\u5c14",
+    enName: "Qatar",
+    group: "\u4e9a\u6d32",
+    RE: /^(974){1}\-?\d{7,11}/
+}, {
+    value: "SA",
+    mobileCode: "966",
+    cnName: "\u6c99\u7279\u963f\u62c9\u4f2f",
+    enName: "Saudi Arabia",
+    group: "\u4e9a\u6d32",
+    RE: /^(966){1}\-?\d{7,11}/
+}, {
+    value: "SG",
+    mobileCode: "65",
+    cnName: "\u65b0\u52a0\u5761",
+    enName: "Singapore",
+    group: "\u4e9a\u6d32",
+    RE: /^(65){1}\-?[13689]\d{6,7}$/
+}, {
+    value: "KR",
+    mobileCode: "82",
+    cnName: "\u97e9\u56fd",
+    enName: "South Korea",
+    group: "\u4e9a\u6d32",
+    RE: /^(82){1}\-?0{0,1}[7,1](?:\d{8}|\d{9})$/
+}, {
+    value: "LK",
+    mobileCode: "94",
+    cnName: "\u65af\u91cc\u5170\u5361",
+    enName: "Sri Lanka",
+    group: "\u4e9a\u6d32",
+    RE: /^(94){1}\-?\d{7,11}/
+}, {
+    value: "TR",
+    mobileCode: "90",
+    cnName: "\u571f\u8033\u5176",
+    enName: "Turkey",
+    group: "\u4e9a\u6d32",
+    RE: /^(90){1}\-?\d{7,11}/
+}, {
+    value: "TH",
+    mobileCode: "66",
+    cnName: "\u6cf0\u56fd",
+    enName: "Thailand",
+    group: "\u4e9a\u6d32",
+    RE: /^(66){1}\-?[13456789]\d{7,8}$/
+}, {
+    value: "AE",
+    mobileCode: "971",
+    cnName: "\u963f\u8054\u914b",
+    enName: "United Arab Emirates",
+    group: "\u4e9a\u6d32",
+    RE: /^(971){1}\-?\d{7,11}/
+}, {
+    value: "VN",
+    mobileCode: "84",
+    cnName: "\u8d8a\u5357",
+    enName: "Vietnam",
+    group: "\u4e9a\u6d32",
+    RE: /^(84){1}\-?[1-9]\d{6,9}$/
+}, {
+    value: "AT",
+    mobileCode: "43",
+    cnName: "\u5965\u5730\u5229",
+    enName: "Austria",
+    group: "\u6b27\u6d32",
+    RE: /^(43){1}\-?\d{7,11}/
+}, {
+    value: "BY",
+    mobileCode: "375",
+    cnName: "\u767d\u4fc4\u7f57\u65af",
+    enName: "Belarus",
+    group: "\u6b27\u6d32",
+    RE: /^(375){1}\-?\d{7,11}/
+}, {
+    value: "BE",
+    mobileCode: "32",
+    cnName: "\u6bd4\u5229\u65f6",
+    enName: "Belgium",
+    group: "\u6b27\u6d32",
+    RE: /^(32){1}\-?\d{7,11}/
+}, {
+    value: "BG",
+    mobileCode: "359",
+    cnName: "\u4fdd\u52a0\u5229\u4e9a",
+    enName: "Bulgaria",
+    group: "\u6b27\u6d32",
+    RE: /^(359){1}\-?\d{7,11}/
+}, {
+    value: "DK",
+    mobileCode: "45",
+    cnName: "\u4e39\u9ea6",
+    enName: "Denmark",
+    group: "\u6b27\u6d32",
+    RE: /^(45){1}\-?\d{7,11}/
+}, {
+    value: "EE",
+    mobileCode: "372",
+    cnName: "\u7231\u6c99\u5c3c\u4e9a",
+    enName: "Estonia",
+    group: "\u6b27\u6d32",
+    RE: /^(372){1}\-?\d{7,11}/
+}, {
+    value: "FI",
+    mobileCode: "358",
+    cnName: "\u82ac\u5170",
+    enName: "Finland",
+    group: "\u6b27\u6d32",
+    RE: /^(358){1}\-?\d{7,11}/
+}, {
+    value: "FR",
+    mobileCode: "33",
+    cnName: "\u6cd5\u56fd",
+    enName: "France",
+    group: "\u6b27\u6d32",
+    RE: /^(33){1}\-?[1678](\d{5}|\d{7,8})$/
+}, {
+    value: "DE",
+    mobileCode: "49",
+    cnName: "\u5fb7\u56fd",
+    enName: "Germany",
+    group: "\u6b27\u6d32",
+    RE: /^(49){1}\-?1(\d{5,6}|\d{9,12})$/
+}, {
+    value: "GR",
+    mobileCode: "30",
+    cnName: "\u5e0c\u814a",
+    enName: "Greece",
+    group: "\u6b27\u6d32",
+    RE: /^(30){1}\-?\d{7,11}/
+}, {
+    value: "HU",
+    mobileCode: "36",
+    cnName: "\u5308\u7259\u5229",
+    enName: "Hungary",
+    group: "\u6b27\u6d32",
+    RE: /^(36){1}\-?\d{7,11}/
+}, {
+    value: "IE",
+    mobileCode: "353",
+    cnName: "\u7231\u5c14\u5170",
+    enName: "Ireland",
+    group: "\u6b27\u6d32",
+    RE: /^(353){1}\-?\d{7,11}/
+}, {
+    value: "IT",
+    mobileCode: "39",
+    cnName: "\u610f\u5927\u5229",
+    enName: "Italy",
+    group: "\u6b27\u6d32",
+    RE: /^(39){1}\-?[37]\d{8,11}$/
+}, {
+    value: "LT",
+    mobileCode: "370",
+    cnName: "\u7acb\u9676\u5b9b",
+    enName: "Lithuania",
+    group: "\u6b27\u6d32",
+    RE: /^(370){1}\-?\d{7,11}/
+}, {
+    value: "LU",
+    mobileCode: "352",
+    cnName: "\u5362\u68ee\u5821",
+    enName: "Luxembourg",
+    group: "\u6b27\u6d32",
+    RE: /^(352){1}\-?\d{7,11}/
+}, {
+    value: "NL",
+    mobileCode: "31",
+    cnName: "\u8377\u5170",
+    enName: "Netherlands",
+    group: "\u6b27\u6d32",
+    RE: /^(31){1}\-?6\d{8}$/
+}, {
+    value: "NO",
+    mobileCode: "47",
+    cnName: "\u632a\u5a01",
+    enName: "Norway",
+    group: "\u6b27\u6d32",
+    RE: /^(47){1}\-?\d{7,11}/
+}, {
+    value: "PL",
+    mobileCode: "48",
+    cnName: "\u6ce2\u5170",
+    enName: "Poland",
+    group: "\u6b27\u6d32",
+    RE: /^(48){1}\-?\d{7,11}/
+}, {
+    value: "PT",
+    mobileCode: "351",
+    cnName: "\u8461\u8404\u7259",
+    enName: "Portugal",
+    group: "\u6b27\u6d32",
+    RE: /^(351){1}\-?\d{7,11}/
+}, {
+    value: "RO",
+    mobileCode: "40",
+    cnName: "\u7f57\u9a6c\u5c3c\u4e9a",
+    enName: "Romania",
+    group: "\u6b27\u6d32",
+    RE: /^(40){1}\-?\d{7,11}/
+}, {
+    value: "RU",
+    mobileCode: "7",
+    cnName: "\u4fc4\u7f57\u65af",
+    enName: "Russia",
+    group: "\u6b27\u6d32",
+    RE: /^(7){1}\-?[13489]\d{9,11}$/
+}, {
+    value: "RS",
+    mobileCode: "381",
+    cnName: "\u585e\u5c14\u7ef4\u4e9a",
+    enName: "Serbia",
+    group: "\u6b27\u6d32",
+    RE: /^(381){1}\-?\d{7,11}/
+}, {
+    value: "ES",
+    mobileCode: "34",
+    cnName: "\u897f\u73ed\u7259",
+    enName: "Spain",
+    group: "\u6b27\u6d32",
+    RE: /^(34){1}\-?\d{7,11}/
+}, {
+    value: "SE",
+    mobileCode: "46",
+    cnName: "\u745e\u5178",
+    enName: "Sweden",
+    group: "\u6b27\u6d32",
+    RE: /^(46){1}\-?[124-7](\d{8}|\d{10}|\d{12})$/
+}, {
+    value: "CH",
+    mobileCode: "41",
+    cnName: "\u745e\u58eb",
+    enName: "Switzerland",
+    group: "\u6b27\u6d32",
+    RE: /^(41){1}\-?\d{7,11}/
+}, {
+    value: "UA",
+    mobileCode: "380",
+    cnName: "\u4e4c\u514b\u5170",
+    enName: "Ukraine",
+    group: "\u6b27\u6d32",
+    RE: /^(380){1}\-?[3-79]\d{8,9}$/
+}, {
+    value: "GB",
+    mobileCode: "44",
+    cnName: "\u82f1\u56fd",
+    enName: "United Kingdom",
+    group: "\u6b27\u6d32",
+    RE: /^(44){1}\-?[347-9](\d{8,9}|\d{11,12})$/
+}, {
+    value: "AR",
+    mobileCode: "54",
+    cnName: "\u963f\u6839\u5ef7",
+    enName: "Argentina",
+    group: "\u7f8e\u6d32",
+    RE: /^(54){1}\-?\d{7,11}/
+}, {
+    value: "BS",
+    mobileCode: "1242",
+    cnName: "\u5df4\u54c8\u9a6c",
+    enName: "Bahamas",
+    group: "\u7f8e\u6d32",
+    RE: /^(1242){1}\-?\d{7,11}/
+}, {
+    value: "BZ",
+    mobileCode: "501",
+    cnName: "\u4f2f\u5229\u5179",
+    enName: "Belize",
+    group: "\u7f8e\u6d32",
+    RE: /^(501){1}\-?\d{7,11}/
+}, {
+    value: "BR",
+    mobileCode: "55",
+    cnName: "\u5df4\u897f",
+    enName: "Brazil",
+    group: "\u7f8e\u6d32",
+    RE: /^(55){1}\-?\d{7,11}/
+}, {
+    value: "CA",
+    mobileCode: "1",
+    cnName: "\u52a0\u62ff\u5927",
+    enName: "Canada",
+    group: "\u7f8e\u6d32",
+    RE: /^(1){1}\-?\d{10}$/
+}, {
+    value: "CL",
+    mobileCode: "56",
+    cnName: "\u667a\u5229",
+    enName: "Chile",
+    group: "\u7f8e\u6d32",
+    RE: /^(56){1}\-?\d{7,11}/
+}, {
+    value: "CO",
+    mobileCode: "57",
+    cnName: "\u54e5\u4f26\u6bd4\u4e9a",
+    enName: "Colombia",
+    group: "\u7f8e\u6d32",
+    RE: /^(57){1}\-?\d{7,11}/
+}, {
+    value: "MX",
+    mobileCode: "52",
+    cnName: "\u58a8\u897f\u54e5",
+    enName: "Mexico",
+    group: "\u7f8e\u6d32",
+    RE: /^(52){1}\-?\d{7,11}/
+}, {
+    value: "PA",
+    mobileCode: "507",
+    cnName: "\u5df4\u62ff\u9a6c",
+    enName: "Panama",
+    group: "\u7f8e\u6d32",
+    RE: /^(507){1}\-?\d{7,11}/
+}, {
+    value: "PE",
+    mobileCode: "51",
+    cnName: "\u79d8\u9c81",
+    enName: "Peru",
+    group: "\u7f8e\u6d32",
+    RE: /^(51){1}\-?\d{7,11}/
+}, {
+    value: "US",
+    mobileCode: "1",
+    cnName: "\u7f8e\u56fd",
+    enName: "United States",
+    group: "\u7f8e\u6d32",
+    RE: /^(1){1}\-?\d{10,12}$/
+}, {
+    value: "VE",
+    mobileCode: "58",
+    cnName: "\u59d4\u5185\u745e\u62c9",
+    enName: "Venezuela",
+    group: "\u7f8e\u6d32",
+    RE: /^(58){1}\-?\d{7,11}/
+}, {
+    value: "VG",
+    mobileCode: "1284",
+    cnName: "\u82f1\u5c5e\u7ef4\u5c14\u4eac\u7fa4\u5c9b",
+    enName: "Virgin Islands, British",
+    group: "\u7f8e\u6d32",
+    RE: /^(1284){1}\-?\d{7,11}/
+}, {
+    value: "EG",
+    mobileCode: "20",
+    cnName: "\u57c3\u53ca",
+    enName: "Egypt",
+    group: "\u975e\u6d32",
+    RE: /^(20){1}\-?\d{7,11}/
+}, {
+    value: "MA",
+    mobileCode: "212",
+    cnName: "\u6469\u6d1b\u54e5",
+    enName: "Morocco",
+    group: "\u975e\u6d32",
+    RE: /^(212){1}\-?\d{7,11}/
+}, {
+    value: "NG",
+    mobileCode: "234",
+    cnName: "\u5c3c\u65e5\u5229\u4e9a",
+    enName: "Nigeria",
+    group: "\u975e\u6d32",
+    RE: /^(234){1}\-?\d{7,11}/
+}, {
+    value: "SC",
+    mobileCode: "248",
+    cnName: "\u585e\u820c\u5c14",
+    enName: "Seychelles",
+    group: "\u975e\u6d32",
+    RE: /^(248){1}\-?\d{7,11}/
+}, {
+    value: "ZA",
+    mobileCode: "27",
+    cnName: "\u5357\u975e",
+    enName: "South Africa",
+    group: "\u975e\u6d32",
+    RE: /^(27){1}\-?\d{7,11}/
+}, {
+    value: "TN",
+    mobileCode: "216",
+    cnName: "\u7a81\u5c3c\u65af",
+    enName: "Tunisia",
+    group: "\u975e\u6d32",
+    RE: /^(216){1}\-?\d{7,11}/
+}, {
+    value: "AU",
+    mobileCode: "61",
+    cnName: "\u6fb3\u5927\u5229\u4e9a",
+    enName: "Australia",
+    group: "\u5927\u6d0b\u6d32",
+    RE: /^(61){1}\-?4\d{8,9}$/
+}, {
+    value: "NZ",
+    mobileCode: "64",
+    cnName: "\u65b0\u897f\u5170",
+    enName: "New Zealand",
+    group: "\u5927\u6d0b\u6d32",
+    RE: /^(64){1}\-?[278]\d{7,9}$/
+}]

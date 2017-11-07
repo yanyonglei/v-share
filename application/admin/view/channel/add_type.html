@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8" />
+
+</html>
+<style>
+    .content{margin:50px auto;}
+</style>
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+<script src="__JS_PATH__/sweet-alert.js"></script>
+<script type="text/javascript" src="/
+public/static/js/jquery.min.js"></script>
+<body>
+<center>
+    类型:<input type="text" placeholder="请输入要添加的视频类型" class="content"/><br />
+    <button id="btn">添加</button>
+</center>
+
+<script>
+
+    /*判断添加类型是否为空*/
+    $('.content').blur(function(){
+        if($('.content').val() == '')
+        {
+            sweetAlert("添加失败", "添加内容为空!", 'error');
+            return;
+        }
+    });
+    $('#btn').click(function(){
+        if($('.content').val() == '')
+        {
+            sweetAlert("添加失败", "添加内容为空!", 'error');
+            return;
+        };
+
+        $.post("{:url('/?s=admin/channel/add')}",{"content":$('.content').val()},function(data){
+            if (data.status) {
+                swal('添加成功', data.msg, 'success');
+            }else{
+                sweetAlert("添加失败", data.msg, 'error');
+            }
+        });
+    });
+</script>
+</body>

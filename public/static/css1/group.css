@@ -1,0 +1,74 @@
+/* Code tidied up by ScrapBook */
+.posting { color: rgb(175, 175, 175); font-size: 12px; }
+.posting-form { width: 960px; margin-left: auto; margin-right: auto; }
+.posting-form label.label-title { display: block; float: left; font-size: 14px; line-height: 40px; font-weight: normal; color: rgb(34, 34, 34); width: 72px; }
+.posting-form input.post-title { vertical-align: middle; margin-bottom: 10px; padding: 8px; width: 512px; height: 22px; }
+.vsns-main-add { width: 920px; padding: 10px 20px 20px; margin-top: 30px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.type-height { height: 50px; }
+.post-details .publish-img { width: 280px; height: 260px; float: left; }
+.post-details .post-item { margin-left: 310px; width: 608px; margin-top: 18px; }
+.radio-lists { font-size: 14px; color: rgb(68, 68, 68); margin-bottom: 10px; padding-top: 8px; }
+.radio-lists input { display: none; }
+.radio-lists label { padding-left: 30px; margin-right: 15px; background: rgba(0, 0, 0, 0) url("radio-bg.png") no-repeat scroll 0px 4px; height: 20px; }
+.radio-lists label.checked { background-position: 0px -21px; }
+label span { margin-right: 4px; color: red; }
+div.tagsinput {  }
+div.tagsinput input { margin: 0px !important; }
+#edui1_iframeholder { min-height: 600px !important; }
+.edui-default .edui-editor { border-radius: 0px !important; }
+.edui-default .edui-toolbar .edui-button, .edui-default .edui-toolbar .edui-splitbutton, .edui-default .edui-toolbar .edui-menubutton, .edui-default .edui-toolbar .edui-combox, .edui-box.edui-default.edui-separator { margin: 10px 13px; }
+.edui-default .edui-toolbar { padding: 0px 45px; }
+.share-btns .rl-btn { width: 107px; line-height: 30px; padding-top: 5px; padding-bottom: 5px; text-align: center; font-size: 16px; }
+.publish-change-btn { margin-top: 7px; width: 214px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; }
+.edui-default .edui-editor-toolbarbox { top: 65px !important; position: static; }
+.edui-default .edui-editor-toolbarboxouter { background-image: none; border-bottom: 0px solid rgb(212, 212, 212); background-color: rgb(255, 255, 255); }
+.edui-default .edui-toolbar .edui-button .edui-icon, .edui-default .edui-toolbar .edui-menubutton .edui-icon, .edui-default .edui-toolbar .edui-splitbutton .edui-icon { background-image: url("icons-new-1.png") !important; background-repeat: no-repeat; }
+.edui-default .edui-for-undo .edui-icon { background-position: 1px 3px !important; }
+.edui-default .edui-for-redo .edui-icon { background-position: -52px 3px !important; }
+.edui-default .edui-for-bold .edui-icon { background-position: -108px 3px !important; }
+.edui-default .edui-for-underline .edui-icon { background-position: -162px 3px !important; }
+.edui-default .edui-for-insertorderedlist .edui-icon { background-position: -237px 3px !important; }
+.edui-default .edui-for-insertunorderedlist .edui-icon { background-position: -291px 3px !important; }
+.edui-default .edui-for-justifyleft .edui-icon { background-position: -346px 3px !important; }
+.edui-default .edui-for-justifycenter .edui-icon { background-position: -400px 3px !important; }
+.edui-default .edui-for-justifyright .edui-icon { background-position: -454px 3px !important; }
+.edui-default .edui-for-link .edui-icon { background-position: -530px 3px !important; }
+.edui-default .edui-for-blockquote .edui-icon { background-position: -583px 3px !important; }
+.edui-default .edui-for-insertimage .edui-icon { background-position: -638px 3px !important; }
+.edui-default .edui-for-insertvideo .edui-icon { background-position: -692px 3px !important; }
+.edui-default .edui-for-removeformat .edui-icon { background-position: 1px -17px !important; }
+.edui-default .edui-for-forecolor .edui-icon { background-position: -165px -23px !important; }
+.edui-default .edui-for-italic .edui-icon { background-position: -236px -23px !important; }
+.edui-default .edui-for-lineheight .edui-icon { background-position: -293px -23px !important; }
+.triangle-btn { position: absolute; right: 0px; top: 0px; width: 0px; height: 0px; border-color: rgb(68, 187, 255) rgb(68, 187, 255) transparent transparent; border-width: 40px 0px 0px 60px; border-style: solid; cursor: pointer; }
+.triangle-btn:hover { opacity: 0.8; }
+.triangle-btn span, .triangle-btn a { position: absolute; top: -37px; right: 0px; color: rgb(255, 255, 255); width: 30px; cursor: pointer; }
+.aboutus { width: 920px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; padding: 20px; position: relative; margin-top: 30px; margin-left: auto; margin-right: auto; }
+.aboutus a.user-header-img img { width: 120px; height: 120px; border-radius: 50%; padding: 3px; }
+.aboutus a.user-header-img img:hover { background: rgb(228, 118, 0) none repeat scroll 0% 0%; }
+.aboutus .aboutus-title { font-size: 20px; color: rgb(68, 68, 68); font-weight: bold; margin-bottom: 10px; }
+.aboutus .aboutus-content { color: rgb(34, 34, 34); font-size: 16px; margin-left: 40px; }
+.dialog-bg { position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 999; text-align: center; }
+.dialog-win { width: 680px; height: 350px; display: inline-block; vertical-align: middle; border-radius: 2px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: relative; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05); }
+.dialog-win .triangle-btn span, .dialog-win .triangle-btn a { font-size: 32px; top: -53px; }
+.win-ref { display: inline-block; width: 0px; height: 100%; vertical-align: middle; }
+.dialog-win .dialog-win-title { font-size: 24px; margin-top: 30px; margin-bottom: 20px; }
+.dialog-win .dialog-win-content { width: 600px; height: 140px; border-radius: 2px; margin-left: auto; margin-right: auto; padding: 10px; font-size: 16px; text-align: left; }
+.dialog-win .dialog-btn-box { float: right; margin-right: 29px; margin-top: 29px; }
+.dialog-win .dialog-btn-box .rl-btn_disable { color: rgb(255, 255, 255); }
+.com-dialog-bg { position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; background: rgba(0, 0, 0, 0.35) none repeat scroll 0% 0%; z-index: 999; text-align: center; }
+.com-dialog-win { width: 960px; height: 450px; display: inline-block; vertical-align: middle; border-radius: 2px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: relative; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05); }
+.com-dialog-win .triangle-btn span { font-size: 32px; top: -53px; }
+.win-ref { display: inline-block; width: 0px; height: 100%; vertical-align: middle; }
+.com-dialog-win .dialog-win-title { font-size: 24px; margin-top: 30px; margin-bottom: 20px; }
+.com-dialog-win .dialog-win-content { width: 890px; height: auto; border-radius: 2px; margin-left: auto; margin-right: auto; padding: 10px; font-size: 16px; text-align: left; }
+.com-dialog-win .dialog-content-left { width: 620px; margin-right: 20px; }
+.com-dialog-win .dialog-content-left .addr, .com-dialog-win .dialog-content-left .weiboaddr { height: 28px; margin-bottom: 20px; }
+.com-dialog-win .dialog-content-left .addr input, .com-dialog-win .dialog-content-left .weiboaddr input { width: 520px; }
+.com-dialog-win .dialog-content-left .comintro textarea { width: 600px; height: 130px; }
+.com-dialog-win .dialog-content-right { margin-left: 640px; }
+.com-dialog-win .dialog-content-right .weixin-title { position: relative; }
+.com-dialog-win .dialog-content-right .weixin-title em { color: rgb(153, 153, 153); font-style: oblique; font-size: 12px; margin-left: 10px; }
+.com-dialog-win .dialog-content-right .weixin-title em span { color: rgb(68, 187, 255); }
+.com-dialog-win .dialog-btn-box { float: right; margin-right: 29px; margin-top: 29px; }
+.com-dialog-win .dialog-btn-box .rl-btn_disable { color: rgb(255, 255, 255); }

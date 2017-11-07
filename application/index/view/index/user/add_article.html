@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>发布文章 - 新片场</title>
+
+<style>
+/* Code tidied up by ScrapBook */
+.line-hide-1 { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: block; }
+</style>
+	<link rel="stylesheet" href="__CSS_PATH__/base.css">
+<link rel="stylesheet" href="__CSS_PATH__/font-icon.css">
+<link rel="stylesheet" href="__CSS_PATH__/common1.css">
+<!--<script type="text/javascript" src="__CK_PATH__/ckeditor.js" ></script>-->
+	<script src="__JS_PATH__/jQuery-1.11.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+	<script src="__JS_PATH__/sweet-alert.min.js"></script>
+	<script  type="text/javascript" src="__UE_PATH__/ueditor.all.js" ></script>
+	<script  type="text/javascript" src="__UE_PATH__/ueditor.config.js" ></script>
+	<link rel="stylesheet" href="__UE_PATH__/themes/default/css/ueditor.css" rel="external nofollow" >
+	<!--<script type="text/javascript" charset="utf-8" src="__UE_PATH__/lang/zh-cn/zh-cn.js" ></script>-->
+</head>
+<body>
+
+	<div class="index-wrap clearfix ease-in-out" id="index-wrap">
+		<!-- 引入后文件-->
+		{include file='./application/index/view/index/header.html'}
+
+	</div>
+<script type="text/javascript" src="about:blank"></script>
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/common_001.css">
+<link rel="stylesheet" href="__CSS_PATH__/rl_login_p.css">
+<section class="vsns clearfix" style="">
+<link rel="stylesheet" href="__CSS_PATH__/group.css">
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/iframe-group.css">
+<link type="text/css" rel="stylesheet" href="__CSS_PATH__/uploadify.css">
+<div class="group" style=" margin-top:100px;">
+	<p style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; width: 940px; margin: 12px auto 0px; font-size: 20px;">发布文章</p>
+	<form class="posting-form clearfix" action="http://www.xinpianchang.com/group/add/ts-do" method="post" id="form" style="">
+		<div class="posting" style="">
+			<input name="expid" value="" type="hidden">
+			<!--<form action="" method="post" enctype="multipart/form-data">-->
+			<div class="vsns-main-add" style="">
+
+				<div class="post-details">
+
+					<div class="publish-img" id="id-pub-hold">
+						<img src="__IMAGES_PATH__/default.png" alt="封面" id="id-publish-img" style="vertical-align: top;" width="270" height="180">
+						<label class="publish-change-btn rl-btn" for="id-publish-btn">编辑封面
+							<input type="file" id="id-publish-btn" placeholder="编辑封面"  name="myfile" onchange="uploadImage();" >
+						</label>
+					</div>
+					<div class="post-item">
+						<div>
+							<label class="label-title"for="post-title" >
+								<span>*</span>标题
+							</label>
+							<input id="post-title" name="title" class="post-title" value="" type="text">
+						</div>
+						<div class="post-tags clearfix">
+							<label class="label-title" for="id-tag">
+								<span>&nbsp;*</span>标签
+							</label>
+							<div class="tag-list">
+								<input name="tags" id="id-tag" type="text">
+							</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="charu" style="margin-top:10px">
+
+
+				<textarea name="content" class="ckeditor" id="myText" cols="155" rows="30" ></textarea>
+			<div class="share-btns r mt20">
+				<input type="button" class="rl-btn" id="submit" value="发布文章" pre="0"/>
+			</div>
+		</div>
+		</div>
+	</form>
+</div>
+	<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+	<script src="__JS_PATH__/sweet-alert.js"></script>
+	<script>
+		 //修改上传数据是，删除服务器内原先的数据
+		//加载图片函数
+		function uploadImage() {
+		    //获取上传的图片路径
+		    	var imgPath=null;
+                // FormData对象，来发送二进制文件。
+                var formdata = new FormData();
+                // 将文件追加到 formdata对象中。
+                formdata.append("myfile", document.getElementById('id-publish-btn').files[0]);
+                $.ajax({
+                    type: "POST",
+                    url: "{:url('/?s=index/user/uploadImg')}",
+                    data: formdata,
+                    /**
+                     * 必须false才会避开jQuery对 formdata 的默认处理
+                     * XMLHttpRequest会对 formdata 进行正确的处理
+                     */
+                    processData: false,
+                    // 告诉jQuery不要去设置Content-Type请求头
+                    contentType: false,
+                    dataType: "json",
+                    success: function (data) {
+                        imgPath=data.msg;
+                       // alert(imgPath);
+                       $('#id-publish-img').attr('src',data.msg);
+                    },
+                });
+
+                return imgPath;
+            }
+
+
+			//检测标题
+			$('#post-title').blur(function(){
+
+			    if($('#post-title').val()==''){
+
+                    sweetAlert("发表失败","标题不能为空!",'error');
+			        return false;
+				}
+			});
+			//检测标签
+			$('#id-tag').blur(function()
+			{
+                if($('#id-tag').val()==''){
+
+                    sweetAlert("发表失败","标签不能为空!",'error');
+
+                    return false;
+                }
+			});
+		//文章的内容检测
+		$('#TextAreal').blur(function(){
+			if($('#TextAreal').val()==''){
+
+
+                sweetAlert("发表失败","内容不能为空!",'error');
+
+				return ;
+			}
+		});
+		//alert($('#TextAreal'));
+		$('#submit').click(function(){
+
+
+			var imagePath= $('#id-publish-img')[0].src;
+			//alert(imagePath);
+			if(imagePath=='' || $('#post-title').val()=='' || $('#id-tag').val()=='' ||$('#myText').val()==''){
+
+
+                sweetAlert("发表失败","图片、标签、标题、内容、不能为空!",'error');
+
+			    return false;
+			}
+
+			$.post("{:url('/?s=index/user/loadArticle')}",{"imagePath":imagePath,"title":$('#post-title').val(),
+					"tag":$('#id-tag').val(),"content":$('#myText').val()},
+
+				function(data){
+
+			    	if(data.status){
+			    	    swal('操作成功',data.msg,'success');
+                        $('#myText').val('')
+                        $('#post-title').val('');
+                        $('#id-tag').val('')
+                        $('#id-publish-img').attr('src','./public/static/image/default.png');
+			    	}else{
+
+			    	    sweetAlert('操作失败',data.msg,'error');
+					}
+				}
+			);
+
+		});
+
+
+	</script>
+
+		<!-- 关于我 -->
+	<div class="aboutus clearfix">
+		<div class="triangle-btn" id="edit-aboutus">
+			<span>编辑</span>
+		</div>
+		<a href="http://www.xinpianchang.com/u10112581" class="user-header-img inb author_img fl mr30">
+			<img src="__IMAGES_PATH__/user_avatar_10112581.jpg" title="闫永磊" alt="闫永磊" width="120" height="120">
+		</a>
+		<div class="aboutus-content">
+							新视频,新片场					</div>
+	</div>
+	
+
+
+</section>
+<link href="__CSS_PATH__/simple.css" rel="stylesheet">
+<link rel="stylesheet" href="__CSS_PATH__/rl_upload_p.css">
+<!--	依赖结构		-->
+<div id="xm_v_upload" style="display: none; position: relative; left: 0px; top: 0px; z-index: 9999;">
+<div class="xma_overlay"></div>
+<div class="upload_dialog">
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<script type="text/javascript" src="about:blank"></script>
+
+<script type="text/javascript" src="about:blank"></script>
+<script type="text/javascript" src="about:blank"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="__CSS_PATH__/jquery.tagsinput.css">
+<script src="about:blank"></script>
+<script>/* Code removed by ScrapBook */</script>
+	<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13px; font-family: helvetica; font-weight: 400; letter-spacing: normal; white-space: nowrap;" id="id-tag_tag_autosize_tester"></tester>
+</body>
+</html>

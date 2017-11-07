@@ -1,0 +1,35 @@
+/* Code tidied up by ScrapBook */
+body { color: rgb(51, 51, 51); font: 12px/1.5 tahoma,arial,sans-serif; overflow-x: hidden; background: white none repeat-x scroll 0% 0%; height: 100%; padding: 0px; margin: 0px; }
+.xma_upload { padding: 10px; font-size: 14px; min-height: 390px; position: relative; }
+.xma_upload_h { text-align: left; border-bottom: 1px dashed rgb(238, 238, 238); padding: 4px 0px 10px; margin-bottom: 10px; position: relative; }
+.xma_upload_h span { margin-right: 20px; font-size: 18px; font-family: "微软雅黑"; }
+.xma_upload_tab { list-style: outside none none; display: block; margin: 0px; padding: 0px; }
+.xma_upload_tab li { float: left; margin-right: 4px; }
+.xma_upload_tab li a { display: inline-block; padding: 4px 8px; border-width: 1px 1px 0px; border-style: solid solid none; border-color: rgb(211, 236, 245) rgb(211, 236, 245) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; font-size: 12px; text-decoration: none; color: rgb(153, 153, 153); outline: medium none; }
+.xma_upload_tab li a.other { background: rgb(239, 249, 253) none repeat scroll 0% 0%; }
+.xma_upload_bd { padding: 10px; }
+.xma_bd_step1 { padding: 50px 80px; }
+.xma_bd_tip { font-size: 12px; color: rgb(255, 170, 0); margin-top: 10px; }
+.xma_bd_step2 { text-align: center; display: none; }
+.xma_bd_title { font-size: 12px; margin: 0px 10px 10px; border-bottom: 1px solid rgb(221, 221, 221); height: 22px; line-height: 22px; }
+.xma_bd_title span { float: left; font-weight: bold; color: rgb(69, 69, 69); }
+.xma_bd_title a { float: right; text-decoration: none; color: rgb(0, 153, 204); }
+.xma_bd_title a:hover { color: rgb(68, 187, 255); }
+.xma_bd_pre, .xma_ww_pre { display: table-cell; vertical-align: middle; width: 300px; height: 300px; overflow: hidden; text-align: center; border: 1px solid rgb(221, 221, 221); background: rgb(237, 237, 237) none repeat scroll 0% 0%; }
+.xma_pre_holder { width: 302px; margin: 0px auto; padding: 10px 0px; }
+.xma_bd_con { text-align: center; }
+.xma_bd_con a, .xma_ww_step1 a { border: medium none; vertical-align: middle; color: rgb(255, 255, 255); margin: 0px 15px; background: rgb(68, 187, 255) none repeat scroll 0% 0%; font-size: 12px; border-radius: 4px; display: inline-block; padding: 7px 16px; opacity: 0.7; line-height: 14px; text-decoration: none; }
+.xma_bd_con a:hover, .xma_ww_step1 a:hover { color: rgb(255, 255, 255); cursor: pointer; border: 0px none; opacity: 1; }
+.xma_upload_ww { padding: 5px; text-align: center; display: none; }
+.xma_ww_step1 { padding-top: 40px; }
+.xma_ww_step1 input { border: 1px solid rgb(221, 221, 221); padding: 6px 8px; width: 340px; font-size: 12px; }
+.xma_ww_step1 input:focus { outline: medium none; }
+.xma_ww_step2 { display: none; padding: 10px; }
+.xma_ww_tip { text-align: left; margin-left: 28px; margin-bottom: 5px; }
+.xma_ww_tip span { font-size: 12px; color: red; }
+.xma_ww_intro { text-align: left; padding: 0px 30px; font-size: 12px; color: rgb(255, 170, 0); }
+.xma_upload_over { display: none; width: 100%; height: 550px; position: absolute; z-index: 10; background: rgba(255, 255, 255, 0.4) none repeat scroll 0% 0%; right: 0px; top: 0px; text-align: center; }
+.xma_upload_over img { width: 32px; height: 32px; border: 0px none; display: inline-block; margin-top: 260px; }
+.xma_bd_error { color: red; font-size: 12px; margin-left: 10px; display: none; }
+.clearfix::after { visibility: hidden; display: block; font-size: 0px; content: ""; clear: both; height: 0px; }
+.clearfix {  }

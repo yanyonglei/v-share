@@ -1,0 +1,52 @@
+/* Code tidied up by ScrapBook */
+* { margin: 0px; padding: 0px; }
+body { font-size: 12px; font-family: "Microsoft YaHei","Tahoma","Arial","宋体"; line-height: 150%; margin-left: auto; margin-right: auto; width: 100%; color: rgb(101, 101, 101); }
+img { border: medium none; }
+ul, li { list-style: outside none none; }
+.twelve { font-size: 12px; }
+.fourth { font-size: 14px; }
+.pdd_top10 { padding-top: 10px; }
+.pdd_right10 { padding-right: 10px; }
+.pdd_bottom10 { padding-bottom: 10px; }
+.pdd_left10 { padding-left: 10px; }
+.songti { font-family: "Microsoft YaHei","Tahoma","Arial","宋体"; }
+.yinwen { font-family: Arial,Helvetica,sans-serif; }
+.se1 { width: 160px; color: rgb(187, 20, 20); }
+.inp { border: 1px solid rgb(210, 207, 137); text-align: left; width: 160px; padding: 5px 4px 0px; height: 24px; color: rgb(187, 20, 20); background: rgb(101, 101, 101) none repeat scroll 0% 0%; }
+.inp2 { border: 1px solid rgb(210, 207, 137); text-align: left; width: 300px; padding: 5px 4px 0px; height: 24px; color: rgb(187, 20, 20); background: rgb(101, 101, 101) none repeat scroll 0% 0%; }
+.cor1 { color: rgb(187, 20, 20); }
+.btn1 { font-size: 12px; color: rgb(187, 20, 20); padding: 4px 4px 1px; border: 1px solid rgb(154, 103, 1); }
+a:link, a:visited { font-size: 12px; color: rgb(101, 101, 101); font-weight: normal; text-decoration: none; font-family: "Microsoft YaHei","Tahoma","Arial","宋体"; }
+a:hover, a:active { font-size: 12px; color: rgb(84, 143, 201); font-weight: normal; text-decoration: none; font-family: "Microsoft YaHei","Tahoma","Arial","宋体"; }
+a.black:link, a.black:visited { font-size: 12px; color: rgb(0, 0, 0); font-weight: bold; text-decoration: none; font-family: "Microsoft YaHei","Tahoma","Arial","宋体"; }
+a.black:hover, a.black:active { font-size: 12px; color: rgb(84, 143, 201); font-weight: bold; text-decoration: none; font-family: "Microsoft YaHei","Tahoma","Arial","宋体"; }
+#header { background: rgb(251, 251, 251) url("/static/image/top_r1_c5.jpg") repeat-x scroll left bottom; height: 95px; font-size: 12px; }
+#logo { padding: 14px 0px 0px 7px; width: 74px; }
+#header-name { font-size: 18px; font-weight: bold; color: rgb(82, 143, 198); padding: 15px 0px 0px; }
+#header-admin { font-size: 14px; padding: 0px 0px 25px; width: 112px; color: rgb(153, 153, 153); }
+#header-right { padding: 3px 10px 0px 0px; font-size: 12px; }
+#header-right span, #header-right a { float: right; }
+#header-right span { background: rgba(0, 0, 0, 0) url("/static/image/time.jpg") no-repeat scroll 0px 2px; padding: 0px 10px 0px 20px; }
+#header-right a.admin-out { background: rgba(0, 0, 0, 0) url("/static/image/exit.jpg") no-repeat scroll 0px 2px; padding: 0px 0px 0px 20px; }
+#header-right a.admin-out:hover { background: rgba(0, 0, 0, 0) url("/static/image/exiton.jpg") no-repeat scroll 0px 2px; }
+#header-right a.admin-home { background: rgba(0, 0, 0, 0) url("/static/image/bool.jpg") no-repeat scroll 0px 1px; padding: 0px 10px 0px 20px; }
+#header-right a.admin-home:hover { background: rgba(0, 0, 0, 0) url("/static/image/boolon.jpg") no-repeat scroll 1px 2px; }
+#header-right a.admin-index { background: rgba(0, 0, 0, 0) url("/static/image/home.jpg") no-repeat scroll 0px 1px; padding: 0px 10px 0px 20px; }
+#header-right a.admin-index:hover { background: rgba(0, 0, 0, 0) url("/static/image/homeon.jpg") no-repeat scroll 0px -1px; }
+#header-menu a { width: 87px; height: 37px; line-height: 32px; margin: 0px 2px 0px 0px; display: inline; text-align: center; font-size: 14px; font-weight: bold; background: rgba(0, 0, 0, 0) url("/static/image/menu.jpg") no-repeat scroll left bottom; float: left; }
+#header-menu a:hover { background: rgba(0, 0, 0, 0) url("/static/image/menuon.jpg") no-repeat scroll left bottom; color: rgb(255, 255, 255); }
+#header-menu a#menuon { background: rgba(0, 0, 0, 0) url("/static/image/menuon.jpg") no-repeat scroll left bottom; color: rgb(255, 255, 255); }
+#left-top { background: rgb(83, 142, 198) none repeat scroll 0% 0%; width: 184px; height: 67px; padding: 7px 0px 0px 10px; line-height: 24px; color: rgb(255, 255, 255); }
+#left-top div { width: 44px; padding: 3px; height: 45px; background: rgba(0, 0, 0, 0) url("/static/image/memberbg.jpg") no-repeat scroll left top; float: left; }
+#left-top span { width: 125px; padding: 0px 0px 0px 6px; height: 45px; float: left; }
+div.sdmenu { width: 184px; font-family: Arial,sans-serif; font-size: 12px; color: rgb(255, 255, 255); padding: 0px 5px; }
+div.sdmenu div { background: rgb(220, 229, 240) none repeat scroll 0% 0%; overflow: hidden; margin-bottom: 1px; color: rgb(84, 143, 199); }
+div.sdmenu div:first-child { background: rgb(220, 229, 240) none repeat scroll 0% 0%; }
+div.sdmenu div.collapsed { height: 35px; }
+div.sdmenu div span { display: block; padding: 0px 25px; font-weight: bold; color: rgb(84, 143, 199); background: rgba(0, 0, 0, 0) url("/static/image/expanded.jpg") no-repeat scroll 10px center; cursor: pointer; height: 35px; line-height: 35px; }
+div.sdmenu div.collapsed span { background-image: url("/static/image/collapsed.jpg"); }
+div.sdmenu div a { padding: 5px 10px 5px 35px; display: block; height: 25px; line-height: 25px; color: rgb(101, 101, 101); background: rgb(242, 240, 245) url("/static/image/line.jpg") no-repeat scroll 25px 15px; }
+div.sdmenu div a.current { background: rgb(204, 204, 204) none repeat scroll 0% 0%; }
+div.sdmenu div a:hover { background: rgb(248, 248, 248) url("/static/image/line.jpg") no-repeat scroll 25px 15px; color: rgb(140, 140, 140); text-decoration: none; }
+#footer { font-size: 12px; width: 100%; }
+.footer_pad { padding: 5px 9px 0px; }

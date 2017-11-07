@@ -1,0 +1,39 @@
+/* Code tidied up by ScrapBook */
+body { font: 12px/1.5 "PingFang SC","Microsoft YaHei","微软雅黑",STHeiti,sans-serif; margin: 0px; color: rgb(17, 34, 51);
+    min-height: 80%; position: relative; padding-top: 0px; word-break: break-all; overflow-wrap: break-word; background: rgb(242, 242, 242) none repeat scroll 0% 0%; }
+ol, ul, li { list-style: outside none none; margin: 0px; padding: 0px; }
+a img { border: medium none; vertical-align: top; }
+h1 { color: rgb(73, 73, 73); font-size: 16px; font-weight: bold; margin: 0px; padding: 10px 0px 18px; }
+h2 { color: rgb(85, 85, 85); font-size: 14px; }
+h2 span { font-size: 12px; font-weight: normal; }
+input[type="text"], input[type="password"], textarea { border: 1px solid rgb(210, 210, 210); padding: 6px 9px; color: rgb(51, 51, 51); outline: medium none; vertical-align: middle; line-height: 16px; height: 16px; display: inline-block; font-size: 14px; }
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus { border: 1px solid rgba(1, 150, 227, 0.4); box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; }
+textarea { height: auto; }
+a, button { color: rgb(17, 34, 51); text-decoration: none; outline: medium none; }
+a:hover { color: rgb(68, 187, 255); }
+input, textarea { transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; outline: medium none; }
+button, input, select, textarea { font-size: 100%; margin: 0px; vertical-align: top; }
+.dn { display: none; }
+.rl-btn, .rl-static { border: medium none; vertical-align: middle; color: rgb(255, 255, 255); background: rgb(68, 187, 255) none repeat scroll 0% 0%; font-size: 12px; border-radius: 4px; display: inline-block; height: 28px; line-height: 28px; padding: 0px 15px; }
+.rl-btn:hover { color: rgb(255, 255, 255); cursor: pointer; border: 0px none; opacity: 0.7; }
+.rl-btn:active { background-color: rgb(42, 171, 245); }
+.user { position: relative; }
+.vsns { width: 1180px; margin: 0px auto; padding: 20px 0px 50px; }
+.vsns-set-box { width: 980px; margin-right: auto; margin-left: auto; }
+.vsns-set-main { width: 780px; margin-right: 20px; float: left; position: relative; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.vsns-set-side { width: 180px; float: right; }
+h1.vsns-title { font-size: 36px; font-weight: normal; margin: 5px 0px 15px; padding: 0px; color: rgb(17, 34, 51); background: rgba(0, 0, 0, 0) url("common-icon.png") no-repeat scroll 0% 0%; }
+.vsns-tabs { background: rgb(230, 230, 230) none repeat scroll 0% 0%; margin-bottom: 0px; font-size: 14px; }
+.vsns-tabs a { display: inline-block; border-right: 1px solid transparent; padding: 15px 30px; font-size: 16px; }
+.vsns-tabs a.selected { background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(68, 187, 255); }
+.vsns-tabs a:hover { color: rgb(68, 187, 255); }
+.rl-btn, .rl-static { border: medium none; vertical-align: middle; color: rgb(255, 255, 255); background: rgb(68, 187, 255) none repeat scroll 0% 0%; font-size: 14px; border-radius: 2px; display: inline-block; padding: 0px 28px; line-height: 28px; }
+.rl-btn:hover { color: rgb(255, 255, 255); cursor: pointer; border: 0px none; opacity: 0.7; }
+.rl-btn:active { background-color: rgb(42, 171, 245); }
+.clearfix::after { visibility: hidden; display: block; font-size: 0px; content: ""; clear: both; height: 0px; }
+.clearfix {  }
+.fl { float: left; }
+.fr { float: right; }
+.icon-user-v { display: inline-block; vertical-align: middle; background: rgba(0, 0, 0, 0) url("common-icon.png") no-repeat scroll 0% 0%; }
+.user-v-p-14, .user-v-c-14 { width: 14px; height: 18px; margin-bottom: 0px; }
+.user-v-p-14 { background-position: -178px -521px; }

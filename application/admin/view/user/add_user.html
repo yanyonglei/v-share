@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<link rel="Bookmark" href="http://www.sucaihuo.com/favicon.ico">
+	<link rel="Shortcut Icon" href="favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="/
+public/static/css/H-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="/
+public/static/css/H-ui.admin.css">
+	<link rel="stylesheet" type="text/css" href="/
+public/static/css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="/
+public/static/css/skin.css" id="skin">
+	<link rel="stylesheet" type="text/css" href="/
+public/static/css/style.css">
+
+
+
+	<title>添加用户</title>
+
+	<link rel="stylesheet" href="/
+public/static/css/layer.css" id="layui_layer_skinlayercss" style=""><link href="/
+public/static/css/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body>
+<article class="page-container">
+	<form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input class="input-text valid" value="" placeholder="" id="username" name="username" type="text">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input class="input-text valid" value="" placeholder="" id="password" name="password" type="password">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户所属性:</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<select class="input-text" id="uder">
+					{if !empty($roles)}
+					{foreach $roles as $key => $val}
+					<option value="{$val->pid}">{$val->rname}</option>
+					{/foreach}
+					{/if}
+				</select>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="beizhu" cols="" rows="" id="summary" class="textarea" placeholder="说点什么...最少输入10个字符" onkeyup="$.Huitextarealength(this,100)"></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" type="submit">
+			</div>
+		</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/
+public/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/
+public/static/js/layer.js"></script>
+<script type="text/javascript" src="/
+public/static/js/H-ui.min.js"></script><a href="javascript:void(0)" class="tools-right toTop Hui-iconfont" title="返回顶部" alt="返回顶部" style="display: none;"></a>
+<script type="text/javascript" src="/
+public/static/js/H-ui.admin.js"></script>
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+<script src="__JS_PATH__/sweet-alert.min.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/
+public/static/js/WdatePicker.js"></script>
+<script type="text/javascript" src="/
+public/static/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/
+public/static/js/validate-methods.js"></script>
+<script type="text/javascript" src="/
+public/static/js/messages_zh.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+
+        $("#form-member-add").validate({
+            rules:{
+                username:{
+                    required:true,
+                    minlength:2,
+                    maxlength:16
+                },
+               	password:{
+                    required:true,
+                    minlength:5,
+                    maxlength:10
+				},
+                uploadfile:{
+                    required:true,
+                },
+
+            },
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                //$(form).ajaxSubmit();
+              //  var index = parent.layer.getFrameIndex(window.name);
+                //parent.$('.btn-refresh').click();
+              //  parent.layer.close(index);
+            }
+        });
+
+
+        $(".btn").click(function(){
+
+            $.post("{:url('/?s=admin/user/doAdd')}",{
+                "username":$('#username').val(),
+                "password":$('#password').val(),
+                "uder":$('#uder').val(),
+				"summary":$('#summary').val(),
+			},function(data){
+				if(data.status==1){
+					sweetAlert('*_*',data.msg,'error');
+				}else if(data.status==2){
+                    sweetAlert('*_*',data.msg,'error');
+				}else if(data.status==3){
+				    swal('^_^',data.msg,'success');
+				}
+			});
+		});
+
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+
+</body>
+</html>

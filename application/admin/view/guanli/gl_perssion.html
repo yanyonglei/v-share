@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <link rel="stylesheet" type="text/css" href="/
+public/static/css/H-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="/
+public/static/css/H-ui.admin.css">
+    <link rel="stylesheet" type="text/css" href="/
+public/static/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/
+public/static/css/skin.css" id="skin">
+    <link rel="stylesheet" type="text/css" href="/
+public/static/css/style.css">
+
+    <title>角色管理</title>
+    <link rel="stylesheet" href="/
+public/static/css/layer.css" id="layui_layer_skinlayercss" style=""></head>
+<link href="WdatePicker.css" rel="stylesheet" type="text/css">
+
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont"></i> 首页 <span class="c-gray en">&gt;</span> 管理员管理 <span class="c-gray en">&gt;</span> 角色管理 <a class="btn btn-success radius r" style="line-height: 1.6em; margin-top: 3px;" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont"></i></a></nav>
+<div class="page-container">
+    <div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 批量删除</a> <a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('添加权限','/?s=admin/guanli/add_perssion','800')"><i class="Hui-iconfont"></i> 添加权限</a> </span> <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+    <table class="table table-border table-bordered table-hover table-bg">
+        <caption>权限管理列表</caption>
+        <thead>
+        <tr>
+          <!--  <th scope="col" colspan="6"></th>-->
+        </tr>
+        <tr class="text-c">
+            <th width="25"><input value="" name="" type="checkbox"></th>
+            <th width="40">ID</th>
+            <th width="200">权限路径</th>
+            <th width="200">权限名称</th>
+            <th width="200">父节点</th>
+            <th width="200">排序</th>
+            <th width="200">状态</th>
+            <th width="200">操作</th>
+            <!--	<th>用户列表</th>-->
+          <!--  <th width="300">描述</th>
+            <th width="70">操作</th>-->
+        </tr>
+        </thead>
+        <tbody class="tbody">
+        {if !empty($permission)}
+        {foreach $permission as $key=> $val}
+        <tr class="text-c">
+            <td><input value="" name="" type="checkbox"></td>
+            <td>{$val['id']}</td>
+            <td>{$val['name']}</td>
+            <!--<td><a href="#">admin</a></td>-->
+            <td>{$val['title']}</td>
+            <td>{$val['pid']}</td>
+            <td>{$val['sort']}</td>
+            <td>{$val['status']}</td>
+            <td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('权限修改','/?s=admin/guanli/add_perssion','{$val->id}')" style="text-decoration: none;"><i class="Hui-iconfont"></i></a>
+                <a title="删除" href="javascript:;" onclick="admin_role_del(this,'{$val->id}')" class="ml-5" style="text-decoration: none;">
+                    <i class="Hui-iconfont"></i></a></td>
+        </tr>
+        {/foreach}
+        {/if}
+        </tbody>
+    </table>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/
+public/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/
+public/static/js/layer.js"></script>
+<script type="text/javascript" src="/
+public/static/js/H-ui.min.js"></script><a href="javascript:void(0)" class="tools-right toTop Hui-iconfont" title="返回顶部" alt="返回顶部" style="display: none;"></a>
+<script type="text/javascript" src="/
+public/static/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/
+public/static/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    /*管理员-角色-添加*/
+    function admin_role_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    function admin_role_edit(title,url,id){
+        layer_show(title,url);
+        if($('#name').val()=='' || $('#title').val()==''
+            || $('#level').val()=='' || $('#pid').val()=='' || $('#sort').val()=='' ){
+            sweetAlert('*_*','内容不能为空','error');
+            return ;
+        }
+        $.post("{:url('/?s=admin/permission/updatePerssion')}",
+            {
+                "id":id,
+                "name":$('#name').val(),
+                "title":$('#title').val(),
+                "level":$('#level').val(),
+                "pid":$('#pid').val(),
+                "sort":$('#sort').val(),
+            },function(data){
+                if(data.status){
+                    swal('^_^',data.msg,'success');
+                }
+            });
+
+    }
+    /*管理员-角色-删除*/
+    function admin_role_del(obj,id){
+        layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+
+            $.ajax({
+                type: 'POST',
+                url: "{:url('/?s=admin/permission/deletePermission')}",
+                dataType: 'json',
+                data:{
+                    "id":id
+                },
+                success: function(data){
+
+                    if(data.status){
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!',{icon:1,time:1000});
+                        $('.r').text(data.count);
+                    }
+                },
+                error:function(data) {
+                    layer.msg(data.msg,{icon:1,time:1000});
+                },
+            });
+        });
+    }
+</script>
+
+</body>
+</html>

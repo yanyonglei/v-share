@@ -1,0 +1,16 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("icomoon.eot") format("embedded-opentype"), url("icomoon.ttf") format("truetype"), url("icomoon.woff") format("woff"), url("icomoon.svg") format("svg");
+}
+[class^="icon-"], [class*=" icon-"] { font-family: "icomoon" !important; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; }
+.icon-arrow-down::before { content: ""; }
+.icon-close::before { content: ""; }
+.icon-message::before { content: ""; }
+.icon-search::before { content: ""; }
+.icon-weibo::before { content: ""; }
+.icon-weixin::before { content: ""; }
+.icon-arrow-top::before { content: ""; color: rgb(153, 153, 153); }
+.icon-iphone::before { content: ""; color: rgb(153, 153, 153); }

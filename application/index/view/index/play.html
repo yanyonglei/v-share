@@ -1,0 +1,502 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{$title}</title>
+    <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
+    <link rel="shortcut icon" href="/favicon.ico?20161118">
+    <link rel="stylesheet" href="__CSS_PATH__/base.css">
+    <link rel="stylesheet" href="__CSS_PATH__/style.css">
+    <link rel="stylesheet" href="public/static/css1/base.css">
+    <meta property="qc:admins" content="2057404607665761526375" />
+    <script src="__JS_PATH__/wb.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        var siteUrl='http://www.vmovier.com';
+        /*	判断分辨率代码@小毛	*/
+        function getWidth(){
+            return document.documentElement.clientWidth || document.body.clientWidth;
+        }
+        (function(){
+            var text = (getWidth()>1180)?'<link id="css-resize" rel="stylesheet" href="__CSS_PATH__/common-1180.css" />':'<link id="css-resize" rel="stylesheet" href="__CSS_PATH__/common-960.css" />';
+            document.write(text);
+        })();
+        var postid = 0;
+        /*	end判断分辨率代码	*/
+    </script>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+    <!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
+
+    </div>
+</head>
+<body>
+<!-- 头部 -->
+<div class="index-wrap clearfix ease-in-out" id="index-wrap">
+    <!-- 引入后文件-->
+    {include file='./application/index/view/index/header.html'}
+
+</div>
+<!-- /头部 -->
+
+<!-- 主体 -->
+
+<div id="main-container" class="container clearfix">
+
+
+    <style>
+        .p00b204e980{
+            font:16px/30px "Microsoft Yahei","冬青黑体简体中文 w3";line-height: 2em;font-size: 16px;word-break:break-all;word-wrap:break-word;
+            margin-bottom: 20px; color: #2a2a2a;
+        }
+        .p00b204e980 img{display: block;margin: 20px auto 20px;max-width: 100%;}
+        .p00b204e980 a{color: #0196E3;}
+        .p00b204e980 a:hover{color: #666;}
+        .p00b204e980 blockquote p{text-indent: 0em;}
+        .p00b204e980 p{margin-bottom: 20px;}
+        .p00b204e980 p:last-child{margin-bottom: 0;}
+        .p00b204e980 object,.p00b204e980 embed{
+            display: block;margin-left: auto;margin-right: auto;width: 100%;max-width: 100%!important;
+        }
+        .p00b204e980 h4{font-size: 20px;margin-bottom: 10px;font-family: "arial", "heltivitar", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei" !important;}
+        .more-intro{margin: 20px auto 0px;cursor: pointer;text-align: center;vertical-align: middle;line-height: 1;width: 80px;}
+        .more-intro .tip{color: #999;padding-right: 8px;font-size: 13px;}
+        .more-intro img{width: 13px;margin: 0;display: inline-block;vertical-align: middle;}
+        .height0{height: 0!important;overflow: hidden;margin: 0!important;padding: 0!important;}
+        .intro-wrap{overflow: hidden;}
+        .show-part{height: 185px;}
+        .post-copyright{margin-top: 30px;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="__CSS_PATH__/video-js.css">
+    <link rel="stylesheet" type="text/css" href="__CSS_PATH__/vim.css">
+    <script type='text/javascript' src='__JS_PATH__/1e5803978ed64bfb81c2fe9951712981.js'></script>
+    <script type="text/javascript" src="__JS_PATH__/flowplayer-3.2.13.min.js"></script>
+    <script>
+    </script>
+    <script src="__JS_PATH__/video.js"></script>
+    <script src="__JS_PATH__/player.js"></script>
+    <div class="post-left">
+        <div class="post-main clearfix">
+
+            <h1 class="post-title">名称:{$res['title']}</h1>
+
+            <div class="post-con clearfix">
+                <div class="post-ope">
+                    <a href="javascript:;" class="post-comment" id="post-comment"></a>
+                    <a href="javascript:;" class="post-like-btn post-like" id="post-like-top-btn"></a>
+                    <a href="javascript:;" class="post-share-btn" id="post-share-btn"></a>
+                </div>
+                <span class="author">作者:{$auth['username']}</span>
+                <span class="time">发布于:{$res['utime']|date="Y-m-d H:i:s",###}</span>
+
+                <span class="time">播放次数:{$res['playcount']}</span>
+
+                <!--<input type="button" value="下载" id="download" style="width:100px;height:30px;background:blue"/>-->
+
+                <!--  <a href="{$res['path']}" id="download" download="down.mp4">下载</a>-->
+
+
+            </div>
+            <!--//视频播放-->
+            <link rel="stylesheet" href="public/static/css1/danmuplayer.css">
+            <script src="public/static/js/jquery-1.11.1.min.js"></script>
+            <script src="public/static/js/danmuplayer.js"></script>
+
+
+            <div class="p00b204e980">
+
+                <!--//视频播放js-->
+
+                <p><iframe frameborder='0' style='display:block' scrolling='no' allowfullscreen='' width='100%' height='500px'
+                           src="{$res['path']}">
+                </iframe>
+                    <button width="60" height="30" id="collection"  style="font-size:17px;">收藏</button>
+                    <a href="javascript:void(0);" id="down" onclick="down();" download="down.mp4">下载</a>
+                   
+
+
+
+                    <!--//分享-->
+                <div class="jiathis_style_32x32">
+                    <a class="jiathis_button_qzone"></a>
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_tqq"></a>
+                    <a class="jiathis_button_weixin"></a>
+                    <a class="jiathis_button_renren"></a>
+                    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                    <a class="jiathis_counter_style"></a>
+                </div>
+                </p>
+            <br /><br />
+
+
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                  <p> <img src="{$res['image']}"/></p>
+                <p>内容:{$res['content']}</p>
+                <!--<p><img src="{$res['image']}"/></p></span>-->
+
+
+
+                <p class="post-copyright">
+                    本文文字内容归本站版权所有，转载请注明来自本文!
+                </p>
+            </div>
+            <div class="post-tag">标签：<a href="javascript:;" title=''>Create Dremer</a>
+                <a href='' title='梦龙乐队_微电影标签'>{$res['title']}</a> <a href='' title='MV_微电影标签'>{$res['name']}</a> </div>
+
+
+        </div>
+
+
+        <div class="recommend">
+            <div class="head clearfix">
+                <span class="sp">相关推荐</span><a href="{:url('/?s=index/detailchannel/index',['id'=>$res['type']])}">更多精彩影片>></a>
+            </div>
+
+
+            <ul>
+                {if !empty($videoInfo)}
+                {foreach $videoInfo as $key =>$val}
+                <li class="zg" data-zg="点击相关推荐影片">
+                    <a class="pic" href="{:url('/?s=index/play/index',['id'=>$val['id']])}"><img src="{$val['image']}" width="120">
+                        <span>{$val['size']}</span>
+                    </a>
+                    <a class="descript " href="{:url('/?s=index/play/index',['id'=>$val['id']])}">{$val['title']}</a>
+                </li>
+                {/foreach}
+                {/if}
+
+
+                {if count($videoInfo)>5}
+                <li class="add" >
+                    <a class="pic" href="{:url('/?s=index/detailchannel/index',['id'=>$res['type']])}" id="moreVideo"><img id="picOnly"src="__IMAGES_PATH__/recommand2.jpg"></a>
+                    <a class="descript" href="{:url('/?s=index/detailchannel/index',['id'=>$res['type']])}">推荐影片给我们，精彩一起分享</a>
+                </li>
+                {/if}
+
+
+            </ul>
+
+
+        </div>
+
+        <hr/>
+        <style>
+            .comment-text img{
+                width: 100%;
+                height: 100%;
+                border: solid 1px #f0f0f0;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                transition: .15s ease-in-out;
+                -webkit-transition: .15s ease-in-out;
+                -moz-transition: .15s ease-in-out;
+                -ms-transition: .15s ease-in-out;
+                -o-transition: .15s ease-in-out;
+            }
+        </style>
+
+        <div class="comment" id="comment">
+
+            <h2 class="">影片点评<span class="num"></span>
+            </h2>
+            <br/>
+            <div class="comment-text clearfix" style="margin-top:20px;">
+                {if !empty($userInfo)}
+                <a  class="img"><img src="{$userInfo['picture']}" ></a>
+                {else}
+                <a  class="img"><img src="./public/static/image/default.png" ></a>
+                {/if}
+                <div class="comment-input">
+                    <textarea id="comment-textarea-re" class="comment-textarea" maxlength="2000" data-len="1" placeholder="你怎么看？ 最多输入2000个字"></textarea>
+                    <div class="comment-ope clearfix">
+                        <input type="hidden" id="vid" value="{$res['id']}"/>
+                        <input type="hidden" id="name" value="{$userInfo['username']}"/>
+                        <a href="javascript:;" class="comment-btn zg" data-zg="点击发表点评" data-referid="0" data-replyuid="0">发表点评</a>
+                        <span class="comment-tip"></span>
+                        <div id="expression" class="expression expression-btn">
+
+                        </div>
+                    </div>
+                </div>
+                <style>
+
+                    .commentlist  .demo{
+                        margin-right:0px;
+                    }
+
+                    .commentlist .user span {
+                        padding-left:30px;
+                        display: inline-block;
+
+                    }
+                    .commentlist .name{
+                        margin-left:30px;
+                        font-weight: bold;
+                        display:block;
+                        width: 100px;
+                        height:30px;
+                        background:palegoldenrod;
+                    }
+                    .commentlist .ptime{
+                        background:#66afe9;
+                        height:30px;
+                    }
+                    .commentlist p{
+                        margin-left:30px;
+
+                    }
+                    .commentlist li{
+                        border-bottom:1px solid #ccc;
+                    }
+                    .commentlist .content{
+                        margin-left:30px;
+                    }
+                </style>
+                <ul class="commentlist">
+                    {if !empty($commentInfo) }
+                    {foreach $commentInfo as $key => $val}
+                    <li >
+                        <a  class="img"><img src="{$val['picture']}" ></a>
+                        <div class="commment-input">
+                            <div class="user">
+                                <span class="name">{$val['username']}</span><span class="ptime">{$val['ptime']||date='Y-m-d H:m:s',###}</span>
+                            </div>
+                            <div>
+                                <span class="content"> {$val['content']}</span>
+                            </div>
+                            <div class="demo">
+
+                                <span class="answer" title="{$val['id']}" style="margin-left:500px">回复</span>
+                              
+                            </div>
+                        </div>
+                    </li>
+                    {/foreach}
+                    {/if}
+
+                </ul>
+                <!--  显示评论的内容   -->
+               <!-- 对评论回复-->
+                <style>
+                    .hui{border:1px solid gray;display:none}
+
+                </style>
+                <div class="comment-input hui ">
+                    <input type="hidden" id="fid" value="{$res['id']}"/>
+                    <textarea id="comment-textarea" class="comment-textarea" maxlength="2000" data-len="1" placeholder="你怎么看？ 最多输入2000个字"></textarea>
+                </div>
+
+
+            </div>
+        </div>
+        <!--//js评论-->
+        <link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+        <script src="__JS_PATH__/sweet-alert.js"></script>
+        <script>
+            //判断用户是否登录
+            $('.comment-textarea').focus(function(){
+
+                if(  "{$userInfo['username']}".length==0 ){
+                    sweetAlert('):',"你没有登录 ,请登陆","error");
+                    return ;
+                }
+            });
+
+            //点击评论按钮
+            $('.comment-btn').click(function(){
+                if($('.comment-textarea').val() == ''){
+                    sweetAlert("评论失败","内容不能为空!",'error');
+                    return;
+                };
+                function getTime(nS) {
+                    var date=new Date(parseInt(nS)* 1000);
+                    var year=date.getFullYear();
+                    var mon = date.getMonth()+1;
+                    var day = date.getDate();
+                    var hours = date.getHours();
+                    var minu = date.getMinutes();
+                    var sec = date.getSeconds();
+                    return year+'-'+mon+'-'+day+' '+hours+':'+minu+':'+sec;
+                }
+                $.post("{:url('/?s=index/play/reply')}",{"content":$('.comment-textarea').val(),"vid":{$res['id']}},function(data){
+
+                    if(data.status!=0){
+                        var str='';
+                        for(var i=0;i<data.length;i++){
+                            str+="<li>" +
+                                "<a class='img'><img src='"+data[i].picture+"'></a>"+
+                                "<div class='user'>" +
+                                "<span class='name'>"+data[i].username+"</span><span class='ptime'>"+getTime(data[i].ptime)+"</span>"+
+                                "</div>"+
+
+                                "<div>"+
+                                "<span class='content'>"+data[i].content+"</span>"+
+                                "</div>"+
+                                "<div class='demo'>" +
+                                "<span class='answer'>回复</span>"+
+                            
+                                "</div>"+
+                                "</li>";
+
+                        }
+                        $('.commentlist').append(str);
+                        $('.comment-textarea').val('');
+                    }else{
+                        sweetAlert("评论失败",data.msg,'error');
+                    }
+
+                });
+
+            });
+        </script>
+        <script src="__JS_PATH__/jquery-1.8.3.js"></script>
+         <script>
+            var k=0;
+            $('.good').live('click',function () {
+
+                if(  "{$userInfo['username']}".length==0 ){
+                    sweetAlert('):',"你没有登录 ,请登陆","error");
+                    return ;
+                }
+                k++;
+
+                $('.good').text('赞('+k+')');
+            });
+
+            //对评论进行回复
+            $('.answer').live("click",function(){
+
+                var hid = $(this).attr('title');
+
+                if(  "{$userInfo['username']}".length==0 ){
+                    sweetAlert('):',"你没有登录 ,请登陆","error");
+                    return ;
+                }
+
+                $('.hui').css("display","block");
+
+                if($('#comment-textarea').val() == ''){
+                    sweetAlert("回复失败","内容不能为空!",'error');
+                    return;
+                };
+                $.post("{:url('/?s=index/play/ply')}",{"content":$('#comment-textarea').val(),"hid":hid,"vid":$('#fid').val()},
+                function(data){
+
+                    if(data.status!=0){
+                        var str='';
+                        for(var i=0;i<data.length;i++){
+                            str="<li>"+'回复评论id'+data[i].hid+':'+data[i].content+"</li>";
+                        }
+
+                        $('.comment-text .commentlist').append(str);
+                        $('.comment-textarea').val('');
+                    }else{
+                        sweetAlert("评论失败",data.msg,'error');
+                    }
+                });
+
+            });
+
+        </script>
+
+    </div>
+
+    <div class="post-right">
+        <div class="post-right-item">
+            <h4 class="post-right-title">热门排行</h4>
+            <ul class="post-hot clearfix">
+                {if !empty($videoHot)}
+                {foreach $videoHot as $key =>$val}
+                <li>
+                    <a href="{:url('/?s=index/play/index',['id'=>$val['id']])}" title="{$val['title']}" class="img"><img src="{$val['image']}" alt="“{$val['title']}">
+                        <span class="time">{$val['size']}</span>
+                    </a>
+                    <a href="{:url('/?s=index/play/index',['id'=>$val['id']])}" title="{$val['title']}" class="title">{$val['title']}</a>
+                </li>
+                {/foreach}
+                {/if}
+            </ul>
+        </div>
+
+
+        <div class="post-right-item">
+             <h4 class="post-right-title">创作人的其他热门视频</h4>
+             <ul class="post-hot clearfix">
+                 {if !empty($allVideo)}
+                {foreach $allVideo as $key =>$val}
+                <li>
+                    <a href="{:url('/?s=index/play/index',['id'=>$val['id']])}" title="{$val['title']}" class="img"><img src="{$val['image']}" alt="“{$val['title']}">
+                        <span class="time">{$val['size']}</span>
+                    </a>
+                    <a href="{:url('/?s=index/play/index',['id'=>$val['id']])}" title="{$val['title']}" class="title">{$val['title']}</a>
+                </li>
+                {/foreach}
+                {/if}
+             </ul>
+        </div>
+    </div>
+    <!-- /主体 -->
+
+    <!-- 底部 -->
+
+    <div class="footer">
+        
+    </div>
+</div>
+</body>
+
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+<script src="__JS_PATH__/sweet-alert.min.js"></script>
+<script src="__JS_PATH__/jquery-1.8.3.js"></script>
+
+<script>
+    var k=0;
+    function down(){
+        if(  "{$userInfo['username']}".length==0 ){
+            sweetAlert('):',"你没有登录 ,请登陆","error");
+            return ;
+        }
+        if(  "{$userInfo['type']}"=='0'){
+
+            sweetAlert('):',"您是普通会员,请进入个人主页完善信息升级会员 ,请登陆","error");
+            return;
+        }
+
+        //记录点击下载的次数
+        k++;
+        $("#down").attr("href","{$res['path']}");
+        $("#down").attr("download",new Date().getTime()+'.mp4');
+
+        $.post("{:url('/?s=index/play/downLoad')}",
+            {"id": {$res['id']},'k':k},
+            function (data) {
+            });
+    }
+    $('#collection').click(function(){
+        if("{$userInfo['username']}".length==0 ){
+            sweetAlert('):',"你没有登录 ,请登陆","error");
+            return ;
+        }
+        $.post("{:url('/?s=index/play/collection')}",
+            {
+                "id": {$res['id']}
+            },
+            function (data) {
+                if(data.status==1){
+                    sweetAlert('*_*',data.msg,"error");
+                }else if(data.status==2){
+                    swal('^_^',data.msg,'success');
+                }
+            });
+    });
+</script>
+</html>

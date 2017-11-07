@@ -1,0 +1,98 @@
+/* Code tidied up by ScrapBook */
+.clearfix::after { visibility: hidden; display: block; font-size: 0px; content: ""; clear: both; height: 0px; }
+.clearfix {  }
+.tc { text-align: center; }
+address, caption, cite, code, dfn, em, th, var, optgroup { font-style: inherit; font-weight: inherit; }
+.exp-intro-wrap { width: 1180px; overflow: auto; padding: 0px 0px 20px; color: rgb(68, 68, 68); font-size: 12px; margin: 0px auto; }
+.exp-labels a { background-color: rgb(68, 187, 255); color: rgb(255, 255, 255); padding: 0px 4px; }
+.exp-labels a.exp-label-column { background-color: rgb(68, 187, 255); }
+.exp-labels div.exp-label-column { border-left-color: rgb(68, 187, 255); }
+.exp-labels a.exp-label-copyright { background-color: rgb(140, 191, 38); }
+.exp-intro-left h1 { cursor: pointer; padding: 0px; margin: 12px 0px 10px; width: 500px; overflow: hidden; }
+.exp-intro-left h1 a { color: rgb(68, 68, 68); }
+.exp-intro-left h1 a:hover { color: rgb(68, 187, 255); }
+.exp-intro-left span { color: rgb(153, 153, 153); font-size: 12px; vertical-align: bottom; }
+.exp-label-tri { width: 0px; height: 0px; border-width: 8px 8px 8px 5px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-color: transparent transparent transparent rgb(68, 187, 255); vertical-align: top; }
+.exp-intro-icons { margin: 12px 0px 0px -3px; }
+.exp-intro-icons i { margin-right: 0px; }
+.exp-intro-right { text-align: right; }
+.exp-intro-right p { max-width: 500px; margin: 40px 0px 0px; font-size: 14px; color: rgb(153, 153, 153); text-align: right; }
+.exp-intro-right h1 { cursor: pointer; padding: 0px; font-size: 0px; color: rgb(34, 34, 34); position: relative; }
+.exp-intro-right h1 a.exp-intro-right-name { font-size: 20px; margin: 0px 5px 0px 0px; color: rgb(68, 68, 68); }
+.exp-intro-right h1 a.exp-intro-right-name:hover { color: rgb(68, 187, 255); }
+.exp-intro-right h1 a.icon-user-v { float: right; margin-top: 7px; }
+.exp-intro-ope { margin: 11px 0px 0px; }
+.exp-intro-ope a { width: 45px; margin-left: 6px; }
+.exp-wrap { min-width: 1180px; margin-bottom: 20px; background-color: rgb(255, 255, 255); border-top: 1px solid rgb(216, 221, 225); border-bottom: 1px solid rgb(216, 221, 225); }
+.exp-mainbody { width: 960px; height: 100%; margin: 0px auto; position: relative; font-size: 14px; }
+.exp-mainbody h1 { max-width: 600px; text-align: center; font-size: 20px; margin: 30px auto 15px; padding: 0px; }
+.exp-mainbody .exp-content, .exp-mainbody .exp-author-intro { width: 750px; margin: 0px auto 50px; font-size: 16px; overflow: hidden; line-height: 1.6; }
+.exp-content img { max-width: 750px; display: block; margin: 30px auto; }
+.exp-mainbody .exp-copyright { font-size: 14px; color: rgb(153, 153, 153); margin: 20px auto 16px; }
+.exp-mainbody a { color: rgb(51, 119, 170); }
+.exp-mainbody a:hover { color: rgb(68, 187, 255); }
+.exp-mainbody .exp-content { border-bottom: 1px dashed rgb(219, 219, 219); padding: 0px; }
+.exp-content p { margin: 10px 0px; line-height: 36px; }
+.exp-mainbody .exp-author-intro { width: 640px; }
+.exp-author-intro .user-avatar { margin: 15px 30px 0px 5px; }
+.exp-author-intro .author_img img { width: 120px; height: 120px; border-radius: 50%; }
+.exp-author-intro-info { width: 72%; margin: 0px; }
+.exp-author-intro-info span.exp-author-about { font-weight: bold; vertical-align: bottom; }
+.exp-author-intro-info h2, .exp-author-intro-info h2 a, .exp-author-intro-info span.exp-author-about { font-size: 18px; color: rgb(68, 68, 68); }
+.exp-author-intro-info h2 { width: 100%; height: 25px; }
+.exp-author-intro-info h2 a { max-width: 18em; }
+.exp-author-intro-info h2 a:hover { color: rgb(68, 187, 255); }
+.exp-author-intro-info .overdot {  }
+.exp-author-intro-info p { max-height: 200px; font-size: 14px; overflow: auto; margin: 0px; }
+.exp-ope-wrap { width: 1180px; }
+.exp-ope-wrap, .exp-tags { margin: 0px auto; }
+.exp-tags a { margin: 0px 5px 0px 0px; color: rgb(153, 153, 153); }
+.exp-ope-wrap .comment-tip { height: 20px; background: transparent url("comment.png") no-repeat scroll 0px 0px; margin-bottom: 10px; }
+.exp-ope-wrap .comment_field { background-color: rgb(255, 255, 255); border-radius: 2px; padding: 10px 20px 30px; position: relative; z-index: 90; }
+.exp-ope-wrap .xm_comment_content { width: 722px; height: 70px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); outline: medium none; resize: none; overflow: auto; padding: 8px; font-size: 14px; line-height: 20px; position: relative; }
+.exp-ope-wrap .xm_comment_content:focus { box-shadow: none; border: 1px solid rgb(221, 221, 221); }
+.favorite-list { list-style: outside none none; width: 340px; padding: 20px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; margin-bottom: 20px; }
+.favorite-list li { padding: 15px 0px; border-top: 1px dashed rgb(219, 219, 219); }
+.favorite-list li:first-child { border-top: medium none; }
+.favorite-list li h3 { font-size: 14px; color: rgb(68, 68, 68); margin: 0px; }
+.favorite-list li h3 a { max-width: 24em; text-indent: 20px; background: rgba(0, 0, 0, 0) url("icon-hot.png") no-repeat scroll 0px 2px; }
+.favorite-info { margin-top: 10px; font-size: 12px; display: inline-block; }
+.favorite-info, .favorite-info a { color: rgb(153, 153, 153); vertical-align: middle; }
+.favorite-info a:first-child { margin-top: -1px; max-width: 150px; }
+.favorite-info a:hover { color: rgb(68, 187, 255); }
+.favorite-info span { vertical-align: bottom; }
+.anou-edit { position: absolute; top: 150px; z-index: 105; padding: 20px 29px; width: 580px; left: 50%; margin-left: -290px; background-color: rgb(255, 255, 255); border-radius: 2px; display: none; }
+.anou-textarea { width: 568px; height: 200px; }
+.add-link-pop { padding: 10px 20px; background-color: rgb(255, 255, 255); border-radius: 2px; border: 1px solid rgb(68, 187, 255); position: absolute; right: 0px; width: 300px; display: none; }
+.link-label { line-height: 26px; margin-right: 10px; width: 60px; }
+.link-input input[type="text"] { font-size: 12px; line-height: 18px; padding: 3px 4px; width: 220px; }
+.fixed { height: 330px; width: 52px; overflow: hidden; position: fixed; top: 325px; left: 30px; color: rgb(101, 101, 101); text-align: center; }
+.fixed.post-share .bds_tools_24 { margin-top: 10px; }
+.fixed.post-share .bds_tools_24 a, .fixed.post-share .bds_tools_24 span { background: rgb(255, 255, 255) url("icon-share.png") no-repeat scroll 0% 0% !important; height: 50px !important; width: 50px !important; box-shadow: 1px 1px 3px rgb(204, 204, 204); opacity: 0.7; margin: 0px !important; }
+.fixed.post-share .bdshare_t .bds_qzone { background-position: -36px -87px !important; }
+.fixed.post-share .bdshare_t .bds_tsina { background-position: -36px -36px !important; }
+.fixed.post-share .bdshare_t .bds_tqq { background-position: -36px -173px !important; }
+.fixed.post-share .bdshare_t .bds_weixin { background-position: -36px 13px !important; }
+.fixed.post-share .bdshare_t .bds_qzone:hover { background-position: -36px -87px !important; opacity: 1 !important; }
+.fixed.post-share .bdshare_t .bds_tsina:hover { background-position: -36px -36px !important; opacity: 1 !important; }
+.fixed.post-share .bdshare_t .bds_tqq:hover { background-position: -36px -173px !important; opacity: 1 !important; }
+.fixed.post-share .bdshare_t .bds_weixin:hover { background-position: -36px 13px !important; opacity: 1 !important; }
+.fixed.post-share .bds_tools_24 a:hover, .fixed.post-share .bds_tools_24 span:hover { background: rgb(255, 255, 255) url("icon-share.png") no-repeat scroll 0% 0% !important; opacity: 1; }
+.bdsharebuttonbox.bds-weinxin-box { float: left; padding-left: 0px !important; }
+.bdsharebuttonbox.bds-weinxin-box a { padding-left: 0px !important; }
+.dialog-bg { position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; background: rgba(0, 0, 0, 0.35) none repeat scroll 0% 0%; z-index: 999; text-align: center; }
+.dialog-win { width: 960px; height: 450px; display: inline-block; vertical-align: middle; border-radius: 2px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: relative; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05); }
+.dialog-win .triangle-btn span, .dialog-win .triangle-btn a { font-size: 32px; top: -53px; }
+.win-ref { display: inline-block; width: 0px; height: 100%; vertical-align: middle; }
+.dialog-win .dialog-win-title { font-size: 24px; margin-top: 30px; margin-bottom: 20px; }
+.dialog-win .dialog-win-content { width: 890px; height: auto; border-radius: 2px; margin-left: auto; margin-right: auto; padding: 10px; font-size: 16px; text-align: left; }
+.dialog-win .dialog-content-left { width: 620px; margin-right: 20px; }
+.dialog-win .dialog-content-left .addr, .dialog-win .dialog-content-left .weiboaddr { height: 28px; margin-bottom: 20px; }
+.dialog-win .dialog-content-left .addr input, .dialog-win .dialog-content-left .weiboaddr input { width: 520px; }
+.dialog-win .dialog-content-left .comintro textarea { width: 600px; height: 130px; }
+.dialog-win .dialog-content-right { margin-left: 640px; }
+.dialog-win .dialog-content-right .weixin-title { position: relative; }
+.dialog-win .dialog-content-right .weixin-title em { color: rgb(153, 153, 153); font-style: oblique; font-size: 12px; margin-left: 10px; }
+.dialog-win .dialog-content-right .weixin-title em span { color: rgb(68, 187, 255); }
+.dialog-win .dialog-btn-box { float: right; margin-right: 29px; margin-top: 29px; }
+.dialog-win .dialog-btn-box .rl-btn_disable { color: rgb(255, 255, 255); }

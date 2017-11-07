@@ -1,0 +1,142 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录 - V 视频</title>
+    <link rel="stylesheet" href="__CSS_PATH__/common.css">
+    <link rel="stylesheet" href="__CSS_PATH__/element-ui.css">
+    <script src="__JS_PATH__/jQuery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+    <script src="__JS_PATH__/sweet-alert.min.js"></script>
+    <script>
+            $(function () {
+                $('.username').blur(function(){
+                    if($('.username').val()==''){
+                        sweetAlert("操作失败","用户名不能为空!",'error');
+                        return;
+                    }
+                });
+
+                $('.login').click(function(){
+
+                    $.post("{:url('/?s=index/auth/doLogin')}",{'username':$('.username').val(),'password':$('.password').val()},
+
+                        function(data){
+                            if(data.status==1){
+                                swal("3秒后跳转",data.msg,'success');
+                                setTimeout(function () {
+                                    location.href=data.redirect_url;
+                                },3000);
+                            }else if(data.status==0){
+                                sweetAlert("操作失败",data.msg,'error');
+                            } else if(data.status==2){
+                                sweetAlert("操作失败",data.msg,'error');
+                            }
+                        }
+
+                    );
+
+                });
+
+            });
+        
+    </script>
+</head>
+<body>
+
+<div class="passport-ground">
+    <div class="ground-reconsitution clearfix">
+        <div class="ground-z">
+
+            <p>只需一个账号<br><span>即可畅享新片场的所有产品和服务</span><br>
+                <span class="logo-list">
+                    <a ><span></span></a>
+                    <a><span></span></a>
+                    <!-- <span></span> -->
+                </span>
+            </p>
+
+        </div>
+        <div class="ground-y">
+            <!-- <p class="welcome mark">欢迎使用新片场服务</p> -->
+                <style>
+        .form-action .action-item input[name=email]{width: 205px;padding-right: 80px;}
+        .form-action .action-item input[name=phone]{width: 127px;padding-right: 80px;}
+    </style>
+    <span class="form-action">
+        <!-- <h4>登录新片场</h4> -->
+
+        <!-- <div class="action-item">
+            <input type="text" placeholder="昵称">
+        </div> -->
+        <a href=""><img class="title-logo" src="__IMAGES_PATH__/black-logo.png" alt=""></a>
+
+        <div class="action-item">
+                <link rel="stylesheet" href="__CSS_PATH__/flags_2.css">
+    <div class="image-preload"></div>
+    <div class="phone-action"><span class="phone-select " data-value=";">用户名</span><input name="username" class="username" type="text" placeholder="用户名" autocomplete="tel">
+        <ul class=" dn">
+        </ul>
+
+    </div>
+        </div>
+
+        <div class="action-item dn">
+
+        </div>
+
+        <div class="action-item">
+            <input name="password" class="password" type="password" placeholder="密码">
+        </div>
+
+        <!--  <div><img src="{:captcha_src()}" alt="captcha" /></div>
+        <br/>
+        <div class="action-item">
+            <input name="yzm" type="text" class="yzm" placeholder="输入验证码" class="yzm">
+        </div>-->
+
+       <!-- <div class="action-item">
+
+            <div class="password-action"><span class="forget-pwd skip-btn" data-url="/find_password">忘记密码?</span></div>
+
+        </div>-->
+        <div class="action-item">
+            <div class="submit-btn login" style="margin-top: 15px;">登录</div>
+        </div>
+
+
+        <div class="action-item">
+            <span style="display:inline-block;width:50%;" class="social-icons">
+             <!--  <span class="login-qq" data-type="qq"></span>
+              <a href="" class="login-qq" onclick="toLogin()" ><img src="__IMAGES_PATH__/qq.png"/></a>
+                <i class="short-line"></i>-->
+                <span id="hzy_fast_login"></span>
+           </span>
+            <p><a class="skip-btn" style="display:inline-block;width:50%;" href="/?s=index/auth/register.html">注册新片场账号</a></p>
+        </div>
+
+    </span>
+
+            
+        </div>
+    </div>
+    <p class="copyright mark">© 2017 V 视频 All rights reserved.</p>
+    
+</div>
+  
+</body>
+<script src="http://open.51094.com/user/myscript/159eac15a019a8.html"></script>
+<script>
+   /* function toLogin()
+    {
+        //以下为按钮点击事件的逻辑。注意这里要重新打开窗口
+        //否则后面跳转到QQ登录，授权页面时会直接缩小当前浏览器的窗口，而不是打开新窗口
+        var A=window.open("../../index/auth/doLogin","TencentLogin",
+            "width=450,height=320,menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+    }*/
+</script>
+</html>

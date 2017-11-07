@@ -1,0 +1,196 @@
+﻿/*
+VideoJS VimCSS Skin (http://videojs.com)
+Version 2.0.0
+*/
+.vim-css{margin:0 auto;max-width: 800px;font-size: 12px/1.5;}
+.vim-css .vjs-controls {
+  height: 64px; opacity: 0.9; color: #fff;display: block;z-index: 100;
+}
+.vim-css img.vjs-poster{max-width: 800px;max-height: 450px;}
+.vim-css .vjs-controls > div {
+  height: 38px; top: 18px; padding: 0; text-align: center; background: rgba(23, 35, 34, 0.746094);
+  border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0;
+  box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;-webkit-tap-highlight-color: rgba(240,240,240,0);
+  -moz-tap-highlight-color: rgba(240,240,240,0);box-sizing:border-box;-webkit-box-sizing:border-box;
+}
+
+/* Placement of Control Items */
+.vim-css .vjs-controls > div.vjs-play-control       { width: 78px; left: 10px; }
+.vim-css .vjs-controls > div.vjs-progress-control   { left: 100px; right: 168px; }
+.vim-css .vjs-controls > div.vjs-time-control       { width: 49px; right: 119px;padding-right: 7px;}
+.vim-css .vjs-controls > div.vjs-volume-control     { width: 34px; right: 85px; }
+.vim-css .vjs-controls > div.vjs-origin-control     { width: 44px;right: 41px;padding-left: 3px;}
+.vim-css .vjs-controls > div.vjs-fullscreen-control { width: 30px; right: 11px;padding-right: 8px;}
+
+/* Play/Pause
+-------------------------------------------------------------------------------- */
+.vim-css .vjs-controls .vjs-play-control { top: 8px; margin: 0; height: 48px;  border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px;/*background:#0e110e;*/}
+.vim-css .vjs-play-control:hover { background: #44bbff; }
+.vim-css.vjs-paused .vjs-play-control span { border-left-color: #fff; border-top-width: 9px; border-left-width: 18px; border-bottom-width: 9px; margin: 15px 0 0 33px; }
+.vim-css.vjs-playing .vjs-play-control span { width: 5px; height: 18px; margin: 5px auto 0; border-left: 5px solid #fff; border-right: 5px solid #fff; margin: 15px 0 0 32px;}
+
+/* Progress
+-------------------------------------------------------------------------------- */
+
+.vim-css .vjs-controls .vjs-progress-control { border-radius: 5px 0 0 5px; -webkit-border-radius: 5px 0 0 5px; -moz-border-radius: 5px 0 0 5px; }
+.vim-css .vjs-progress-control .vjs-progress-holder { height: 11px; padding: 1px; margin: 12px 10px 0 12px; border-color: #666666; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0;overflow: visible;}
+.vim-css .vjs-progress-control .vjs-play-progress { height: 11px; background: #44bbff; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; position: relative;z-index: 100;}
+.vim-css .vjs-progress-control .vjs-load-progress { height: 11px; background: #666666; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; z-index: 100;}
+.vim-css .vjs-progress-control .vjs-preload-holder { height: 11px; /*background: #666666;*/ border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0;width: 100%;top: 1px;display: none;overflow: hidden;border-right: 2px solid transparent;box-szizing:border-box;-webkit-box-sizing: border-box;}
+/*.vim-css .vjs-progress-control .vjs-preload-holder{}*/
+.vim-css .vjs-progress-control .vjs-preload-holder .buffer{background: url(../images/575e718c83cfc.jpg);background-size: auto 100%;-webkit-animation: buffer 1000ms linear infinite;animation: buffer 1000ms linear infinite;width: 110%;height: 11px;}
+@keyframes buffer{
+  0%{transform:translateX(0px);}
+  50%{transform:translateX(-20px);}
+  100%{transform:translateX(-40px);}
+}
+@-webkit-keyframes buffer{
+  0%{-webkit-transform:translateX(0px);}
+  50%{-webkit-transform:translateX(-20px);}
+  100%{-webkit-transform:translateX(-40px);}
+}
+
+/*.vim-css .vjs-progress-control .vjs-preload-holder .buffer {
+    width: 100%;
+    overflow: hidden;
+    border-top: 0;
+    border-bottom: 0;
+}
+.vim-css .vjs-progress-control .vjs-preload-holder .buffer svg {
+    -webkit-animation: buffer 250ms linear infinite;
+    animation: buffer 250ms linear infinite;
+}*/
+
+/* Time Display
+-------------------------------------------------------------------------------- */
+.vim-css .vjs-controls .vjs-time-control { font-size: 11px;/*position: absolute;right: -48px;top:-30px;width: 100px;display: inline-block;*/}
+.vim-css .vjs-controls .vjs-time-control span { line-height: 39px; /* Centering vertically *//*background: #fff;color: #333;padding: 0 5px*/font-size: 15px;}
+.vim-css .vjs-controls .vjs-time-control .vjs-current-time-display{}
+
+
+.vim-css .vjs-controls .vjs-current-time-display{position: absolute;left:-33px;top:-30px;width: 50px;display: inline-block;background: #fff;color: #333;padding: 0 5px;height: 20px;line-height: 20px;font-size: 12px;visibility: hidden;}
+.vim-css .vjs-controls .vjs-current-time-display::before {
+    content: "";
+    border-left: .3em solid transparent;
+    border-right: .3em solid transparent;
+    border-top: .3em solid #fff;
+    bottom: -0.28em;;
+    content: "";
+    left: 50%;
+    margin-left: -.3em;
+    position: absolute;
+}
+
+/* Volume
+-------------------------------------------------------------------------------- */
+.vim-css .vjs-volume-control div {margin:5px 0; width: 36px;position: relative;height: 100%;top: -20px;}
+.vim-css .vjs-volume-control div span {
+  float: left; margin: 0 2px 0 0; padding: 0; width: 4px; height: 14px; /*border-bottom: 14px solid #666666;*/background: #666666;
+  -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear;border-bottom-width: 0px;display:block;position: absolute;bottom: 0;}
+.vjs-volume-control div span:nth-child(1) {left: 0px;}
+.vjs-volume-control div span:nth-child(2) {left: 6px;}
+.vjs-volume-control div span:nth-child(3) {left: 12px;}
+.vjs-volume-control div span:nth-child(4) {left: 18px;}
+.vjs-volume-control div span:nth-child(5) {left: 24px;}
+.vjs-volume-control div span:nth-child(6) {left: 30px;}
+
+.vim-css .vjs-volume-control div span.vjs-volume-level-on { border-color: #44bbff; background:#44bbff;}
+.vim-css .vjs-volume-control div span:hover {height: 19px;}
+/* origin */
+.vim-css .vjs-origin-control{cursor: pointer;position: relative;}
+.vim-css .vjs-origin-control .hd{/*background: url(../images/57612246ec248.png) no-repeat;background-size: auto 100%;height: 14px;width: 30px;    margin-top: 12px;margin: 12px auto 0;*/background: #666666;display: inline-block;height: 16px;width: 38px;line-height: 16px;font-weight: bolder;/*font-smoothing: auto;-webkit-font-smoothing: auto;*/border-radius: 2px;-webkit-border-radius:2px;-moz-border-radius:2px;position: relative;top:12px;font-family: "Arial";font-size: 12px;}
+.vim-css .vjs-origin-control .hd:hover{/*background-image: url(../images/577ba70467690.png);*/background: #45bbff;}
+.vim-css .vjs-origin-control .oc{position: absolute;width: 64px;bottom:46px;background: rgba(23, 35, 34, 0.746094);left: -17px;padding: 8px 5px 8px 10px;border-radius: 6px;opacity: 0;text-align: left;
+  -webkit-transition: opacity 150ms ease-out,-webkit-transform 150ms ease-out;
+  -moz-transition: opacity 150ms ease-out,-moz-transform 150ms ease-out;
+  -ms-transition: opacity 150ms ease-out,-ms-transform 150ms ease-out;
+  transition: opacity 150ms ease-out,transform 150ms ease-out;transform:translateY(3px);-wekit-transform:translateY(3px);-moz-transform:translateY(3px);}
+.vim-css .vjs-origin-control .oc-action{transform:translateY(0px);-wekit-transform:translateY(0px);-moz-transform:translateY(0px);opacity: 1;} 
+.vim-css .vjs-origin-control .oc:before{border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 6px solid rgba(23, 35, 34, 0.746094);bottom: -6px;content: "";left: 50%;margin-left: -6px;position: absolute;}
+.vim-css .vjs-origin-control .oc span{display: block;height: 18px;line-height: 18px;font-weight: 700;font-family: "Helvetica Neue",Helvetica,Arial!important;font-size: 12px;}
+.vim-css .vjs-origin-control .oc span:hover{color: #44bbff;}
+.vim-css .vjs-origin-control .oc span:before{content: "";height: 5px;width: 5px;border-radius: 50%;border:1px solid #666;display: inline-block;margin-right: 5px;position: relative;top:-1px;}
+.vim-css .vjs-origin-control .oc .oc-item-select{color: #44bbff;}
+.vim-css .vjs-origin-control .oc .oc-item-select:before{background: #44bbff;border-color:#44bbff;}
+.vim-css .vjs-origin-control .oc .oc-item  i{display: inline-block;width: 10px;height: 7px;background: url(../images/575e30bc4b973.png) no-repeat;background-size: 100%;margin-left: 2px;}
+
+
+
+
+/* Fullscreen
+-------------------------------------------------------------------------------- */
+.vim-css .vjs-fullscreen-control div {margin: 13px auto 0;width: 14px;
+    height: 14px;background: url(../images/5761220fb6f34.png);background-size: 100%;}
+.vim-css .vjs-fullscreen-control div:hover{background-image: url(../images/577ba78575c17.png);}
+.vim-css .vjs-controls .vjs-fullscreen-control { border-radius: 0 5px 5px 0; -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; }
+/* Making default fullscreen icon smaller */
+.vim-css .vjs-fullscreen-control div span:nth-child(1) { margin: 0 4px 4px 0; border: none; border-top: 4px solid #fff; border-right: 4px solid rgba(0,0,0,0); }
+.vim-css .vjs-fullscreen-control div span:nth-child(2) { border: none; border-top: 4px solid #fff; border-left: 4px solid rgba(0,0,0,0); }
+.vim-css .vjs-fullscreen-control div span:nth-child(3) { clear: both; margin: 0 4px 0 0; border: none; border-bottom: 4px solid #fff; border-right: 4px solid rgba(0,0,0,0); }
+.vim-css .vjs-fullscreen-control div span:nth-child(4) { border: none; border-bottom: 4px solid #fff; border-left: 4px solid rgba(0,0,0,0); }
+.vim-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(1) { border: none; border-bottom: 4px solid #fff; border-left: 4px solid rgba(0,0,0,0); }
+.vim-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(2) { border: none; border-bottom: 4px solid #fff; border-right: 4px solid rgba(0,0,0,0); }
+.vim-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(3) { border: none; border-top: 4px solid #fff; border-left: 4px solid rgba(0,0,0,0); }
+.vim-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(4) { border: none; border-top: 4px solid #fff; border-right: 4px solid rgba(0,0,0,0); }
+
+
+/* Fullscreen control hovering */
+.vim-css .vjs-fullscreen-control:hover div span:nth-child(3), .vim-css .vjs-fullscreen-control:hover div span:nth-child(4), .vim-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(1), .vim-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(2) { border-bottom-color: #00ADEF; }
+.vim-css .vjs-fullscreen-control:hover div span:nth-child(1), .vim-css .vjs-fullscreen-control:hover div span:nth-child(2), .vim-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(3), .vim-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(4) { border-top-color: #00ADEF; }
+
+/* Big Play Button (at start)
+---------------------------------------------------------*/
+.vim-css div.vjs-big-play-button {
+  width: 130px; height: 80px; margin: -40px 0 0 -65px;
+  border: none; opacity: 0.9;
+  border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;
+
+  background: rgba(23, 35, 34, 0.746094);
+  display: none!important;
+  /* CSS Shadows */
+  box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;
+}
+.vim-css div.vjs-big-play-button:hover {
+  background: #44bbff;
+  opacity: 1;
+}
+.vim-css div.vjs-big-play-button span {
+  margin: 22px 0 0 48px;
+  /* Drawing the play triangle with borders - http://www.infimum.dk/HTML/slantinfo.html */
+  border-left: 36px solid #fff; /* Width & Color of play icon */
+  /* Height of play icon is total top & bottom border widths. Color is transparent. */
+  border-top: 18px solid rgba(0,0,0,0); border-bottom: 18px solid rgba(0,0,0,0);
+}
+.vim-css .video-btn-warp{position: absolute;top:20px;right: 10px;z-index: 100;}
+.vim-css .video-btn-warp .video-btn{width: 40px;height: 40px;margin-bottom: 5px;background-image: url(../images/577c6af7cc0c2.png);
+    background-image: -webkit-image-set(url(../images/577c6af7cc0c2.png) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-07-06/577c6b4d32eb1.png ) 2x);
+    background-image: -moz-image-set(url(../images/577c6af7cc0c2.png   ) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-07-06/577c6b4d32eb1.png  ) 2x);
+    background-image: -ms-image-set(url(../images/577c6af7cc0c2.png) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-07-06/577c6b4d32eb1.png ) 2x);
+    background-image: -o-image-set(url(../images/577c6af7cc0c2.png   ) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-07-06/577c6b4d32eb1.png  ) 2x);
+    background-image: image-set(url(../images/575d0712ce66c.png) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-07-06/577c6b4d32eb1.png) 2x);border-radius: 6px;-webkit-border-radius: 6px;-moz-border-radius: 6px;}
+.vim-css .video-btn-warp .video-comment{background-position: 0 -45px;display: none;}
+.vim-css .video-btn-warp .video-comment:hover{background-position: 0 0;}
+.vim-css .video-btn-warp .video-share{background-position: 0 0;position: relative;}
+.vim-css .video-btn-warp .video-share:hover{background-position: 0 -45px;}
+.vim-css .video-btn-warp .video-share .btn-share-con-action{opacity: 1;transform:translateX(0px);-wekit-transform:translateX(0px);-moz-transform:translateX(0px);}
+.vim-css .btn-share-con{position: absolute;left:-168px;top:0;display: none;border-radius: 2px;padding-right: 10px;-webkit-transition: opacity 80ms ease-out,-webkit-transform 80ms ease-out;
+  -moz-transition: opacity 80ms ease-out,-moz-transform 80ms ease-out;
+  -ms-transition: opacity 80ms ease-out,-ms-transform 80ms ease-out;
+  transition: opacity 80ms ease-out,transform 100ms ease-out;opacity: 0;transform:translateX(3px);-wekit-transform:translateX(3px);-moz-transform:translateX(3px);}
+.vim-css .btn-share-con:after{content: "";border-left: 6px solid rgba(0,0,0,0.4);border-top: 5px solid rgba(0,0,0,0);border-bottom: 5px solid rgba(0,0,0,0);width: 0;height: 0;position: absolute;right: 4px;top: 14px;}
+.vim-css .btn-share-con > div{width: 40px;height: 40px;position: relative;background: rgba(0,0,0,0.4);padding: 0!important;}
+.vim-css .btn-share-con > div:nth-child(1){border-top-left-radius: 6px;-webkit-border-top-left-radius: 6px;-moz-border-top-left-radius: 6px;border-bottom-left-radius: 6px;-webkit-border-bottom-left-radius: 6px;-moz-border-bottom-left-radius: 6px;}
+.vim-css .btn-share-con > div:nth-child(4){border-top-right-radius: 6px;-webkit-border-top-right-radius: 6px;-moz-border-top-right-radius: 6px;border-bottom-right-radius: 6px;-webkit-border-bottom-right-radius: 6px;-moz-border-bottom-right-radius: 6px;}
+.vim-css .btn-share-con > div a{background: none;margin:0!important;width: 21px!important;height: 17px!important;position: absolute;bottom: 0;top:0;left: 0;right: 0;margin:auto!important;background-image: url(../images/5757cf1adca2a.png)!important;background-image: -webkit-image-set(url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757cf1adca2a.png) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757ced48ab8b.png) 2x)!important;background-image: -moz-image-set(url(../images/5757cf1adca2a.png ) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757ced48ab8b.png  ) 2x)!important;
+    background-image: -ms-image-set(url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757cf1adca2a.png) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757ced48ab8b.png ) 2x)!important;
+    background-image: -o-image-set(url(../images/5757cf1adca2a.png ) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757ced48ab8b.png  ) 2x)!important;
+    background-image: image-set(url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757cf1adca2a.png) 1x,url(http://cs.vmoiver.com/Uploads/Activity/2016-06-08/5757ced48ab8b.png ) 2x)!important;padding: 0!important;}
+.vim-css .btn-share-con > div:nth-child(1) a{background-position:0px -154px!important;}
+.vim-css .btn-share-con > div:nth-child(1) a:hover{background-position:0px -132px!important;}
+.vim-css .btn-share-con > div:nth-child(2) a{background-position:0px -110px!important;}
+.vim-css .btn-share-con > div:nth-child(2) a:hover{background-position:0px -88px!important;}
+.vim-css .btn-share-con > div:nth-child(3) a{background-position:0px -66px!important;}
+.vim-css .btn-share-con > div:nth-child(3) a:hover{background-position:0px -44px!important;}
+
+.vim-css .btn-share-con > div:nth-child(4) a{background-position:0px -22px!important;}
+.vim-css .btn-share-con > div:nth-child(4) a:hover{background-position:0px 0px!important;}

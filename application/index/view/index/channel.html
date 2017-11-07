@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+	<title>V电影频道_V电影</title> 
+
+<link rel="stylesheet" href="__CSS_PATH__/base.css">
+<link rel="stylesheet" href="__CSS_PATH__/common-1180.css">
+<link rel="stylesheet" href="__CSS_PATH__/common-1180_1.css">
+<meta property="qc:admins" content="2057404607665761526375" />
+</head>
+<body>
+
+<div class="index-wrap clearfix ease-in-out" id="index-wrap">
+	<!-- 引入后文件-->
+	{include file='./application/index/view/index/header.html'}
+</div>
+	<div id="main-container" class="container clearfix">
+	<div class="album-title clearfix">频道分类 
+		<span class="album-subtitle">
+			<span>分享浏览优秀<a href="http://www.vmovier.com" title="微电影">短片</a></span>
+		</span>
+	</div>	
+	<ul class="channel-list clearfix">
+		{if !empty($channel)}
+			{foreach $channel as $key =>$val}
+			<li>
+				<a href="{:url('/?s=index/detailchannel/index',['id'=>$val->id])}" class="channel-img"><img src="" alt="{$val->name}">
+					<div class="channel-name-warp">
+						<span class="channel-name">#{$val->id}{$val->name}#</span>
+					</div>
+				</a>
+			</li>
+			{/foreach}
+		{/if}
+	</ul>
+</div>
+</body>
+</html>

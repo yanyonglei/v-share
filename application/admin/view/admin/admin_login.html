@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录页面</title>
+	<script src="/public/static/js/jquery-3.1.1.min.js"></script>
+	<script src="/public/static/js/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/public/static/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/static/css/login.css">
+	<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+	<script src="__JS_PATH__/sweet-alert.min.js"></script>
+
+</head>
+<body>
+	<div class="main">
+		<div class="nav">
+		<div class="font t_c">C</div>
+		<div class="font t_r">R</div>
+		<div class="font t_e">E</div>
+		<div class="font t_a">A</div>
+		<div class="font t_t">T</div>
+		<div class="font t_d">D</div>
+		<div class="font t_m">M</div>
+			<div class="nav_left">
+				<a href="javascript:;">Create Dream</a>
+			</div>
+			
+		</div>
+
+		<!--登录-->
+	<div class="middle">
+		<div class="m_main m1">
+			<form class="form1" method="post" action="">
+				<div class="title">欢迎登录CREATE DREAM</div>
+				<input type="text" class="user_message" name="username" id="username">
+				<label class="label l4">用户名不能为空</label>
+					<div class="icon user_icon"></div>
+				<input type="password" class="user_message" name="password" id="password">
+				<label class="label l5">密码不能为空</label>
+					<div class="icon pass_icon"></div>
+				
+				<input type="button" value="登&nbsp&nbsp录" class="order submit" id="btn">
+
+			</form>
+		</div>
+	</div>
+
+
+		<div class="footer">
+			CREATE DREAM@2017XY</br>
+			@There is no difference between life without dream and salted fish !
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".middle").show("explode",1000);
+
+		$(".m1 .user_message").blur(function(){
+			if($(this).val() == ""){
+				var a = $(this).index();
+				if(a > 2){
+					a=a/2;
+				}
+				$(".m1 .submit").attr("disabled","disabled");
+				$(".label").eq(a-1).show("bounce",1000)
+			}else{
+				$(".m1 .submit").removeAttr("disabled","disabled");
+				$(".label").eq(a-1).hide("bounce",1000)
+			}
+		})
+		$(".m1 .user_message").focus(function(){
+				var a = $(this).index();
+				if(a > 2){
+					a=a/2;
+				}
+				$(".label").eq(a-1).hide("bounce",1000)
+		});
+
+		//登录验证
+		$('#btn').click(function(){
+
+		    $.post("{:url('/?s=admin/login/doLogin')}",{'username':$('#username').val(),'password':$('#password').val()},
+				function(data){
+		        if(data.status==1){
+                    swal('^_^ 3秒后进入',data.msg,'success');
+                    setTimeout(function () {
+                        location.href = "{:url('/?s=admin/admin/admin')}";
+                    },3000);
+				}else if(data.status==2){
+		            sweetAlert('*_*',data.msg,'error');
+				}else if(data.status==0){
+                    sweetAlert('*_*',data.msg,'error');
+				}else if(data.status==3){
+                    sweetAlert('*_*',data.msg,'error');
+				}
+			});
+		});
+	})
+</script>

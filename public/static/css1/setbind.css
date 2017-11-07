@@ -1,0 +1,9 @@
+/* Code tidied up by ScrapBook */
+.user { float: left; }
+.user .user_img { float: left; }
+.user .user_img img { width: 180px; display: block; height: 180px; }
+.user .other_info { float: left; background: rgb(255, 255, 255) none repeat scroll 0% 0%; text-align: center; width: 180px; }
+#xm_c { margin: 36px 0px; min-height: 200px; }
+#xm_c > li { margin-bottom: 30px; }
+#xm_c .label { width: 100px; float: left; font-size: 14px; text-align: right; margin-right: 18px; line-height: 36px; }
+#xm_c .input { float: left; text-align: left; }

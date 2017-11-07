@@ -1,0 +1,43 @@
+<div class="index-nav">
+    <a href="/" title="" class="index-logo" id="index-logo"><img src="public/static/image/black-logo.png" alt="V电影_最大的微电影平台"></a>
+    <ul class="index-nav-list clearfix">
+        <li><a href="/" title="" style="color:#337788">首页</a></li>
+        <li><a href="{:url('/?s=/index/channel')}" title="" style="color:#337788">频道</a></li>
+        <!--<li><a href="/" title="" style="color:#337788">影视剧照</a></li>-->
+        <li><a href="{:url('/?s=/index/article')}" title="" style="color:#337788">影视文章</a></li>
+    </ul>
+    <!--登陆后的页面-->
+    {if  !empty($userInfo)}
+    <div id="user-check-t" class="">
+
+        <div class="index-user" >
+            <a href="javascript:;"  style="width:90px;height: 32px;font-size:15px;" id="user" style="cursor:default"><span style="color:black" class="name odt" id="user-check-username">{$userInfo['username']}</span></a>
+
+            <ul class="index-sub" style="background:#002200">
+                <li><a href="{:url('/?s=index/user/index')}" id="personal-url">我的主页</a></li>
+                <li><a target="_blank" href="{:url('/?s=index/user/setting')}">账号设置</a></li>
+                {if $userInfo['uder']!=''}
+                <li id="is-admin"><a target="_blank" href="{:url('/?s=admin/login/admin_login')}">后台管理</a></li>
+                {/if}
+                {if $userInfo['type']>=1 || $userInfo['uder']>=1 }
+                <li><a href="{:url('/?s=index/user/add_video')}">上传视频</a></li>
+                {/if}
+                <li><a href="{:url('/?s=index/user/add_article')}">发表文章</a></li>
+                <li><a href="{:url('/?s=index/auth/loginout')}">退出</a></li>
+            </ul>
+        </div>
+    </div>
+    {else}
+    <!--登陆前的页面-->
+    <div class="index-login" id="">
+        <a href="{:url('/?s=index/auth/login')}">登录</a>
+        <a href="{:url('/?s=index/auth/register')}">注册</a>
+    </div>
+    {/if}
+    <form class="index-search" id="search-form" action='/search'>
+        <input type="text" name='kw'>
+        <a onclick="getElementById('search-form').submit();" href="{:url('/?s=index/search/index')}" class="index-search-btn"></a>
+
+    </form>
+
+</div>

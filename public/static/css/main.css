@@ -1,0 +1,11 @@
+/* Code tidied up by ScrapBook */
+html { overflow-x: hidden; }
+.main_contact1 { float: left; }
+.main_images { border: 1px solid rgb(204, 204, 204); padding: 2px; }
+.main_changes { background: rgb(237, 237, 178) none repeat scroll 0% 0%; padding: 4px 0px; }
+.main_about { padding: 0px 10px; float: left; }
+.main_kuang { background: rgba(0, 0, 0, 0) url("bg1.jpg") repeat-x scroll left top; font-weight: bold; }
+.main_nav_bg { background: rgba(0, 0, 0, 0) url("contact_bg.jpg") repeat-x scroll 0% 0%; height: 25px; padding-top: 2px; float: left; }
+.main_td1 { background: rgba(0, 0, 0, 0) url("copybg.jpg") no-repeat scroll left center; height: 44px; color: rgb(187, 20, 20); text-align: left; padding: 17px 0px 0px 22px; }
+a.main_td2:link, a.main_td2:visited { color: rgb(102, 102, 102); }
+a.main_td2:hover, a.main_td2:active { color: rgb(187, 20, 20); }

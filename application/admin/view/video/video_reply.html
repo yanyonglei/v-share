@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" type="text/css" href="/
+public/static/css/H-ui.min.css">
+<link rel="stylesheet" type="text/css" href="/
+public/static/css/H-ui.admin.css">
+<link rel="stylesheet" type="text/css" href="/
+public/static/css/iconfont.css">
+<link rel="stylesheet" type="text/css" href="/
+public/static/css/skin.css" id="skin">
+<link rel="stylesheet" type="text/css" href="/
+public/static/css/style.css">
+
+<title>视频评论</title>
+<link rel="stylesheet" href="/
+public/static/css/layer.css" id="layui_layer_skinlayercss" style=""></head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont"></i> 首页 <span class="c-gray en">&gt;</span> 管理员管理 <span class="c-gray en">&gt;</span> 角色管理 <a class="btn btn-success radius r" style="line-height: 1.6em; margin-top: 3px;" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont"></i></a></nav>
+<div class="page-container">
+	<div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a href="javascript:;" id="det" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 批量删除</a></span><span class="r" style="margin-left:25px;margin-top:5px">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<table class="table table-border table-bordered table-hover table-bg">
+		<thead>
+			<tr>
+				<th scope="col" colspan="7">评论管理</th>
+			</tr>
+			<tr class="text-c">
+				<th width="25"><input value="" name="" type="checkbox"></th>
+				<th width="40">ID</th>
+				<th width="150">角色名</th>
+				<th width="150">视频名</th>
+				<th>评论内容</th>
+				<th width="300">时间</th>
+				<th width="70">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		{if !empty($res)}
+		{foreach $res as $val}
+			<tr class="text-c">
+				<td><input value="{$val['id']}" name="id[]" type="checkbox"></td>
+				<td>{$val['id']}</td>
+				<td>{$val['username']}</td>
+				<td>{$val['title']}</td>
+				<td style="max-height:150px;overflow: hidden;display:block">{$val['content']}</td>
+				<td>{$val['ptime']|date="Y-m-d H:i:s",###}</td>
+				<td class="f-14"><a title="删除" href="javascript:;" onclick="admin_role_del(this,'{$val[\'id\']}')" class="ml-5" style="text-decoration: none;"><i class="Hui-iconfont"></i></a></td>
+			</tr>
+		{/foreach}
+		{/if}
+		</tbody>
+	</table>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/
+public/static/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/
+public/static/js/layer.js"></script>
+<script type="text/javascript" src="/
+public/static/js/H-ui.min.js"></script><a href="javascript:void(0)" class="tools-right toTop Hui-iconfont" title="返回顶部" alt="返回顶部" style="display: none;"></a> 
+<script type="text/javascript" src="/
+public/static/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/
+public/static/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+<script src="__JS_PATH__/sweet-alert.js"></script>
+<script type="text/javascript">
+/*管理员-角色-添加*/
+function admin_role_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*管理员-角色-编辑*/
+function admin_role_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+/*管理员-角色-删除*/
+function admin_role_del(obj,id){
+
+	layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: "{:url('/?s=admin/video/dec')}",
+			dataType: 'json',
+			data :{
+			    'id':id
+			},
+
+			success: function(data){
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});		
+	});
+}
+
+
+//批量删除
+
+$('#det').click(function(){
+    var del = $("input[name='id[]']:checked").length;
+    if(del ==0)
+    {
+        sweetAlert("批量删除失败","请选择至少一项!",'error');
+        return;
+    }
+
+    //批量选择
+    if(confirm("确定要删除所选项目？")){
+        var checkedList = new Array();
+        $("input[name='id[]']:checked").each(function() {
+            checkedList.push($(this).val());
+        });
+    }
+    $.post("{:url('/?s=admin/video/checked')}",{"delt":checkedList.toString()},function(data){
+        if(data.status){
+
+            swal('删除成功',data.msg,'success');
+            $("input[name='id[]']:checked").parents("tr").remove();
+
+        }else{
+            sweetAlert("批量删除失败",data.msg,'error');
+        }
+
+    });
+
+})
+</script>
+
+</body>
+</html>

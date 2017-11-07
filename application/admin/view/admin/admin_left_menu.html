@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>左侧导航menu</title>
+<link href="/public/static/css/css.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/public/static/js/sdmenu.js"></script>
+<script type="text/javascript">
+	// <![CDATA[
+	var myMenu;
+	window.onload = function() {
+		myMenu = new SDMenu("my_menu");
+		myMenu.init();
+	};
+	// ]]>
+</script>
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; background: rgb(242, 240, 245)  repeat-y scroll left top; width: 194px; }
+</style>
+</head>
+<body onselectstart="return false;" ondragstart="return false;" oncontextmenu="return false;">
+<div id="left-top">
+	<div><img src="/public/static/image/member.gif" width="44" height="44"></div>
+</div>
+    <div style="float: left;" id="my_menu" class="sdmenu">
+	  <div class="collapsed">
+        <span>系统管理</span>
+        <a href="{:url('/?s=admin/system/system')}" target="mainFrame" onfocus="this.blur()">系统设置</a>
+      </div>
+	  <div class="">
+        <span>角色管理</span>
+        <a href="{:url('/?s=admin/guanli/gl_role')}" target="mainFrame" onfocus="this.blur()">角色管理</a>
+        <a href="{:url('/?s=admin/guanli/gl_list')}" target="mainFrame" onfocus="this.blur()">管理员列表</a>
+
+      </div>
+      <div>
+        <span>权限管理</span>
+          <a href="{:url('/?s=admin/guanli/gl_perssion')}" target="mainFrame" onfocus="this.blur()">权限管理</a>
+         <!-- <a href="{:url('admin/guanli/list_perssion')}" target="mainFrame" onfocus="this.blur()">权限列表</a>-->
+      </div>
+	  <div class="">
+        <span>用户管理</span>
+        <a href="{:url('/?s=admin/user/user')}" target="mainFrame" onfocus="this.blur()">用户列表</a>
+        <a href="{:url('/?s=admin/user/add_user')}" target="mainFrame" onfocus="this.blur()">添加用户</a>
+        <a href="{:url('/?s=admin/user/change_password')}" target="mainFrame" onfocus="this.blur()">修改密码</a>
+
+      </div>
+	  <div class="collapsed">
+        <span>视频管理</span>
+        <a href="{:url('/?s=admin/video/video_list')}" target="mainFrame" onfocus="this.blur()">视频分类</a>
+
+        <a href="{:url('/?s=admin/video/video_see')}" target="mainFrame" onfocus="this.blur()">浏览记录</a>
+        <a href="{:url('/?s=admin/video/video_reply')}" target="mainFrame" onfocus="this.blur()">视频评论</a>
+        <a href="{:url('/?s=admin/video/video_download')}" target="mainFrame" onfocus="this.blur()">下载记录</a>
+        <a href="{:url('/?s=admin/video/video_buy')}" target="mainFrame" onfocus="this.blur()">视频订单</a>
+
+      </div>
+	  
+      <div class="">
+        <span>文章管理</span>
+          <a href="{:url('/?s=admin/article/article')}" target="mainFrame" onfocus="this.blur()">文章列表</a>
+      </div>
+        <div class="">
+            <span>视频类型</span>
+           <a href="{:url('/?s=admin/channel/channel')}" target="mainFrame" onfocus="this.blur()">视频类型</a>
+           <a href="{:url('/?s=admin/channel/add_type')}" target="mainFrame" onfocus="this.blur()">添加类型</a>
+           
+        </div>
+    </div>
+</body></html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$title}</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link href="__CSS_PATH__/css.css" type="text/css" rel="stylesheet">
+</head>
+<!--框架样式-->
+<frameset rows="95,*,30" cols="*" frameborder="no" border="0" framespacing="0">
+<!--top样式-->
+	<frame src="{:url('/?s=admin/admin/admin_top')}" name="topframe" scrolling="no" noresize="" id="topframe" title="topframe">
+<!--contact样式-->
+	<frameset id="attachucp" framespacing="0" border="0" frameborder="no" cols="194,12,*" rows="*">
+		<frame scrolling="auto" noresize="" frameborder="no" name="leftFrame" src="{:url('/?s=admin/admin/admin_left_menu')}">
+		<frame id="leftbar" scrolling="no" noresize="" name="switchFrame" src="{:url('/?s=admin/admin/admin_button')}">
+		<frame scrolling="auto" noresize="" border="0" name="mainFrame" src="{:url('/?s=admin/system/system')}">
+	</frameset>
+<!--bottom样式-->
+</frameset><noframes></noframes>
+<!--不可以删除-->
+
+</html>

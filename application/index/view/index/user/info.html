@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$title}</title>
+<style>
+/* Code tidied up by ScrapBook */
+.line-hide-1 { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: block; }
+	body{
+		padding-top:0px;
+	}
+</style>
+	<link rel="stylesheet" href="__CSS_PATH__/base.css">
+	<link rel="stylesheet" href="__CSS_PATH__/font-icon.css">
+	<link rel="stylesheet" href="__CSS_PATH__/common_1.css">
+	<link rel="stylesheet" href="__CSS_PATH__/common_001.css">
+	<link rel="stylesheet" href="__CSS_PATH__/setbind.css">
+	<link  rel="stylesheet" href="__CSS_PATH__/common-960.css" />
+	<link  rel="stylesheet" href="__CSS_PATH__/common-1180.css" />
+</head>
+<body>
+
+<div class=" clearfix ease-in-out" id="index-wrap">
+	<!-- 引入后文件-->
+	{include file='./application/index/view/index/header.html'}
+</div>
+<div class="vsns-set-box clearfix">
+<h1 class="vsns-title" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font-size: 20px;">设置</h1>
+<div class="vsns-set-main clearfix">
+	<link rel="stylesheet" href="__CSS_PATH__/setbind.css">
+<div class="vsns-tabs">
+		<a href="#" class="selected">个人详细信息</a>
+	</div>
+	<style type="text/css">
+/* Code tidied up by ScrapBook */
+#xm_c li { margin-bottom: 4px; }
+#xm_c li div.label { width: 250px; }
+#xm_c li div.input { width: 330px; margin-right: 80px; }
+</style>
+	<ul id="xm_c">
+		<li class="clearfix">
+			<div class="label">实名认证 </div>
+			<div class="input" style="font-size: 14px; line-height: 36px;" verifytype="1">个人认证</div>
+		</li>
+		<li class="clearfix">
+			<div class="label"> 真实姓名：</div>
+			{if !empty($userInfo['realname'])}
+			<div class="input" style="font-size: 14px; line-height: 36px;">{$userInfo['realname']} 	</div>
+			{else}
+			<div class="input" style="font-size: 14px; line-height: 36px;">未认证</div>
+			{/if}
+
+		</li>
+		<li class="clearfix">
+			<div class="label"> 用户名：</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;">  {$userInfo['username']}	</div>
+		</li>
+		<li class="clearfix">
+			<div class="label"> 认证描述：</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;"> 	新视频,V视频  </div>
+		</li>
+		<li class="clearfix">
+			<div class="label"> 手机号码：</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;"> {$userInfo['phone']}</div>
+		</li>
+		<li class="clearfix">
+			<div class="label"> 邮箱:</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;"> {$userInfo['email']}</div>
+		</li>
+		<li class="clearfix">
+			<div class="label"> 性别:</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;"> {$userInfo['sex']}</div>
+		</li>
+
+		<li class="clearfix">
+			<div class="label">最近登陆时间:</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;">{$userInfo['ctime']|date="Y-m-d H:m:s",###}  </div>
+		</li>
+		<li class="clearfix">
+			<div class="label">注册IP:</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;">{$ip}  </div>
+		</li>
+
+		<li class="clearfix">
+			<div class="label">简介:</div>
+			<div class="input" style="font-size: 14px; line-height: 36px;">{$userInfo['summary']} </div>
+		</li>
+						
+	</ul>
+					<div style="text-align: center; margin-bottom: 20px;">
+			<a href="/?s=index/user/setting" class="rl-btn">修改信息</a> <a href="/?s=index/user/index" class="rl-btn">返回</a>
+		</div>
+				</div>
+<div class="vsns-set-side">	
+	<div class="user">
+		<div class="user_img">
+			<img src="{$userInfo['picture']}" alt="{$userInfo['realname']}">
+		</div>
+		<div class="other_info">
+			<div>
+				<h2><span style="vertical-align: middle; font-size: 16px; font-weight: 700;">{$userInfo['realname']}</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</div></div>
+</section>
+
+
+</body>
+</html>

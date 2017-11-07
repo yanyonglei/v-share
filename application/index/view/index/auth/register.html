@@ -1,0 +1,204 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$title}</title>
+    <link rel="stylesheet" href="__CSS_PATH__/common.css">
+    <link rel="stylesheet" href="__CSS_PATH__/element-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+    <script src="__JS_PATH__/sweet-alert.min.js"></script>
+
+    <script src="__JS_PATH__/jQuery-1.11.3.min.js"></script>
+    <script>
+
+            $(function () {
+                var phoneCode=null;
+                //用户名
+                var nickname = $('.nickname');
+                nickname.blur(function () {
+
+                    if(nickname.val()==''){
+                        sweetAlert("操作失败","用户名不能为空!",'error');
+                        return ;
+                    }
+                    if(nickname.val().length<5 || nickname.val().length>10){
+
+                        sweetAlert("操作失败","用户名长度5-10位!",'error');
+                        return ;
+                    }
+                    var params={
+                        "username":nickname.val()
+                    };
+                    $.post("{:url('/?s=index/auth/checkUser')}",params,function(data){
+
+                        if(data.status){
+                            sweetAlert("操作失败",data.msg,'error');
+
+                            return false;
+                        }else{
+
+
+                        }
+                    });
+                });
+
+                //获取手机号
+                //获取手机验证码
+                var code=null;
+                //var phoneNum=;
+                $('.phone').blur(function () {
+                    if(isNaN($('.phone').val())){
+                        sweetAlert("操作失败","手机号非数字",'error');
+                        return false;
+                    }
+                    if($('.phone').val().length!=11){
+                        sweetAlert("操作失败","手机号长度不是11位",'error');
+
+                        return false ;
+                    }
+                });
+
+                //获取短信验证码
+                $('.identifying-achieve').click(function () {
+
+                    $.post("{:url('/?s=index/auth/getCode')}",{"phone":$('.phone').val()},function(data){
+
+                        if(data.status){
+                            swal("操作成功",data.msg,'success');
+
+                            phoneCode=data.code;
+                        }else{
+                            sweetAlert("操作失败",data.msg,'error');
+                            return ;
+                        }
+                    });
+
+                });
+                var password=$('#password').val();
+                var confirm=$('#confirm').val();
+
+                $('#password').blur(function () {
+                    if(password=$('#password').val().length<5 ||$('#password').val().length >10){
+
+                        sweetAlert("操作失败",'密码长度5-10位','error');
+
+                    }
+                });
+
+                //onblur 失去焦点函数
+                $('#confirm').blur(function () {
+
+                    if($('#password').val().length<5 || $('#password').val().length >10){
+                        sweetAlert("操作失败",'密码长度5-10位','error');
+                        return ;
+                    }
+
+                    if($('#password').val()!=$('#confirm').val()){
+                        sweetAlert("操作失败",'两次密码不正确','error');
+                        return false;
+
+                    }
+                });
+                 $('.register').click(function () {
+
+                     if(nickname.val()==''){
+                         sweetAlert("操作失败",'用户名不能为空','error');
+
+                         return ;
+                     }
+                     //密码检测
+                     if($('.phone').val().length!=11){
+                         sweetAlert("操作失败","手机号长度不是11位",'error');
+                         return false ;
+                     }
+                     //密码检测
+                     if($('#password').val()=='' || $('#confirm').val()==''){
+
+                         sweetAlert("操作失败","密码或者确认密码不能为空",'error');
+                         return ;
+                     }
+
+                       // alert(phoneCode);
+                     if($('.code').val()!=phoneCode){
+                         sweetAlert("操作失败","验证码不正确",'error');
+                         return ;
+                     }
+                     var params={
+                         "username":nickname.val(),
+                         "password":$('#password').val(),
+                         "phone":$('.phone').val(),
+                     };
+                     $.post("{:url('/?s=index/auth/doRegister')}",params,function (data) {
+                            if(data.status){
+                                swal("操作成功",data.msg,'success');
+
+                            }else{
+                                sweetAlert("操作失败",data.msg,'error');
+                            }
+                     });
+                 });
+            });
+    </script>
+</head>
+<body>
+<div class="passport-ground">
+    <div class="ground-reconsitution clearfix">
+        <div class="ground-z">
+
+            <p>还在等什么赶快注册吧<br><span>V视频注册</span><br>
+                <span class="logo-list">
+
+                </span>
+            </p>
+
+        </div>
+        <div class="ground-y">
+
+    <span class="form-action">
+       <!--  <h4>注册新片场</h4> -->
+        <a href="/"><img class="title-logo" src="__IMAGES_PATH__/black-logo.png" alt=""></a>
+
+        <div class="action-item">
+            <input class="nickname" name="nickname" type="text" placeholder="昵称">
+            <p  style="display:none">这个昵称已经有人使用，换个昵称试试</p>
+        </div>
+        <div class="action-item" >
+
+            <link rel="stylesheet" href="__CSS_PATH__/flags_2.css">
+            <div class="image-preload"></div>
+            <div class="phone-action"><span class="phone-select prefix_code">手机号</span><input name="phone" class="phone" type="text" placeholder="手机号">
+            <ul class=" dn">
+            </ul>
+        </div>
+        </div>
+        <div class="action-item identifying-action" >
+            <input name="code" type="text"  class="code"  placeholder="手机验证码"><span class="identifying-achieve">获取验证码</span>
+        </div>
+
+        <div class="action-item">
+            <input name="password" id="password"  type="password" placeholder="设置密码">
+        </div>
+
+        <div class="action-item">
+            <input name="password" id="confirm" type="password" placeholder="确认密码">
+        </div>
+
+        <div class="action-item">
+            <div class="submit-btn register" style="margin-bottom:15px;">注册</div>
+            <p class="responsibility-notice">注册即表示您已同意v 视频 责任声明</p>
+        </div>
+
+        <div class="registered-notice">已经有账号？<a href="/?s=index/auth/login.html">直接登录</a></div>
+
+    </span>
+        </div>
+    </div>
+    <p class="copyright mark">© 2017 V 视频 All rights reserved.</p>
+
+</div>
+</body>
+</html>

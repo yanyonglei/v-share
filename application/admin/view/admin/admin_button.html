@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>展开合闭按钮</title>
+<link href="/public/static/css/css.css" type="text/css" rel="stylesheet">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script language="javascript">
+function switchSysBar(){
+ if (parent.document.getElementById('attachucp').cols=="194,12,*"){
+ document.getElementById('leftbar').style.display="";
+ parent.document.getElementById('attachucp').cols="0,12,*";
+ }
+ else{
+ parent.document.getElementById('attachucp').cols="194,12,*";
+ document.getElementById('leftbar').style.display="none"
+ }
+}
+function load(){
+ if (parent.document.getElementById('attachucp').cols=="0,12,*"){
+ document.getElementById('leftbar').style.display="";
+ }
+}
+</script>
+</head>
+<body onload="load()" onselectstart="return false" oncontextmenu="return(false)" style="overflow-x: hidden;" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+<center>
+<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td width="1" bgcolor="#ededb1">
+</td>
+<td id="leftbar" style="display: none; background: rgb(210, 210, 208) url(&quot;/public/static/image/switchbg.jpg&quot;) repeat-y scroll 0px 0px;">
+<a onclick="switchSysBar()" href="javascript:void(0);">
+<img src="/public/static/image/pic24.jpg" alt="隐藏左侧菜单" width="12" height="72" border="0">
+</a>
+</td>
+<td id="rightbar" style="background: rgb(242, 240, 245) url(&quot;/public/static/image/switchbg.jpg&quot;) repeat-y scroll 0px 0px;">
+<a onclick="switchSysBar()" href="javascript:void(0);">
+<img src="/public/static/image/pic23.jpg" alt="隐藏左侧菜单" width="12" height="72" border="0">
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+
+</body>
+</html>

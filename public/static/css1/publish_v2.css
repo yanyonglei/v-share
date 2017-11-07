@@ -1,0 +1,163 @@
+/* Code tidied up by ScrapBook */
+h2, ul, p { margin: 0px; padding: 0px; }
+.dn { display: none; }
+.clearfix {  }
+.clearfix::before, .clearfix::after { display: table; line-height: 0; content: ""; }
+.clearfix::after { clear: both; }
+.mt20 { margin-top: 20px; }
+.mt45 { margin-top: 45px; }
+.op0 { opacity: 0; }
+.fr { float: right; }
+.short-slide-down-width { width: 256px; }
+.long-slide-down-width { width: 530px; }
+:-moz-placeholder { color: rgb(204, 204, 204); }
+*::-moz-placeholder { color: rgb(204, 204, 204); }
+.upload-loading { position: absolute; top: 12px; right: -20px; visibility: hidden; width: 18px; height: 18px; }
+#publish .publish-title { width: 1080px; margin-top: 12px; margin-right: auto; margin-left: auto; font-size: 20px; }
+#publish .form-addr-tip { letter-spacing: 0px; font-size: 12px; color: rgb(153, 153, 153); margin-left: 100px; }
+#publish .publish-type-main { height: 380px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: relative; }
+#publish .publish-type-main .drag-cover { position: absolute; top: 0px; left: 0px; width: 492px; height: 370px; background: rgb(251, 251, 251) none repeat scroll 0% 0%; opacity: 0.9; z-index: 99; border: 5px dashed rgb(238, 238, 238); display: none; }
+#publish .publish-type-main .drag-cover .upload-cross { width: 53px; height: 53px; position: absolute; top: 50%; left: 50%; margin: -27px 0px 0px -27px; }
+#publish .upload-before { overflow: hidden; width: 1080px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; margin: 30px auto 0px; }
+#publish .publish-type-main .upload-before-nav { position: absolute; width: 30px; top: 0px; right: 0px; color: rgb(153, 153, 153); font-size: 15px; padding: 35px 11px; text-align: center; background: rgb(251, 251, 251) none repeat scroll 0% 0%; }
+#publish .publish-type-main .upload-before-nav:hover { color: rgb(255, 255, 255); background: rgb(68, 187, 255) none repeat scroll 0% 0%; cursor: pointer; }
+#publish .publish-type-main .upload-before-nav i { display: inline-block; width: 16px; height: 19px; background-size: cover; margin-top: 5px; background-image: url("upload-nav_1x.png"); background-repeat: no-repeat; }
+#publish .publish-type-main .upload-before-nav:hover i { background-position: 0px -24px; }
+#publish .shortHeight { height: 187px; }
+#publish .publish-type-main .publish-type { height: 100%; position: relative; }
+#publish .publish-type-main .publish-type-con { text-align: center; position: absolute; top: 58%; left: 50%; }
+#publish .publish-type-main .publish-type-1 { width: 500px; float: left; }
+#publish .publish-type-main .publish-type-1 .publish-type-con-1 { margin: -77px 0px 0px -90px; }
+#publish .publish-type-main .publish-type-1 .publish-type-con-1 .upload-size-tip { color: rgb(153, 153, 153); padding-top: 5px; position: absolute; width: 400px; left: -108px; }
+#publish .publish-type-main .publish-type-1 .publish-type-con-1 .publish-upload-icon { width: 84px; height: 72px; }
+.moxie-shim { left: 0px !important; }
+#publish .publish-type-main .publish-type-1 .publish-type-con-1 .publish-choice-video { width: 180px; height: 41px; font-size: 15px; font-weight: bold; color: rgb(255, 255, 255); background: rgb(68, 187, 255) none repeat scroll 0% 0%; line-height: 41px; border-radius: 3px; cursor: pointer; margin-top: 10px; }
+#publish .publish-type-main .publish-type-1 .publish-type-con-1 .publish-choice-video:hover { opacity: 0.8; }
+#publish .publish-type-con-1 .publish-tip { font-size: 13px; color: rgb(153, 153, 153); padding-top: 8px; }
+#publish .upload-action { width: 1080px; margin: 30px auto 0px; }
+#publish .upload-action .upload-fixed { width: 100%; position: relative; background: rgb(255, 255, 255) none repeat scroll 0% 0%; height: 100px; }
+#publish .upload-action .upload-fixed .upload-addr-input { padding: 8px 10px; border: 1px solid rgb(221, 221, 221); font-size: 14px; width: 508px; height: 24px; color: rgb(51, 51, 51); margin: 29px 0px 0px 28px; }
+#publish .upload-action .upload-fixed .upload-addr-tip { display: block; font-size: 13px; color: rgb(204, 204, 204); padding: 3px 0px 0px 28px; width: 530px; }
+#publish .upload-action .upload-box { padding: 30px; margin-top: 20px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#publish .upload-action .upload-box .upload-box-aside { float: left; width: 405px; }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover-wrap .upload-cover { width: 360px; height: 200px; border: 1px dashed rgb(204, 204, 204); position: relative; }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover { position: relative; }
+#id-publish-img { position: absolute; top: 0px; left: 0px; z-index: 10; }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover .upload-cover-con { position: absolute; top: 50%; left: 51%; margin: -36px 0px 0px -31px; }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover-wrap .upload-cover .upload-cover-con .upload-cover-icon { width: 63px; height: 46px; display: inline-block; background-image: url("upload-cover-icon_1x.png"); background-repeat: no-repeat; }
+#publish .upload-action .upload-box .upload-box-aside #id-pub-hold .upload-again-wrap { width: 100%; height: 100%; position: relative; background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%; display: none; z-index: 10000; }
+#publish .upload-action .upload-box .upload-box-aside #id-pub-hold { cursor: pointer; }
+#publish .upload-action .upload-box .upload-box-aside #id-pub-hold:hover .upload-cover-icon { background-position: 0px -51px; }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover .upload-cover-con .upload-cover-title { font-size: 14px; color: rgb(204, 204, 204); margin-left: -4px; }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover .upload-again { width: 110px; height: 40px; line-height: 40px; text-align: center; border: 1px solid rgb(255, 255, 255); border-radius: 3px; color: rgb(255, 255, 255); position: absolute; top: 50%; left: 50%; margin: -20px 0px 0px -55px; z-index: 1000; font-size: 15px; cursor: pointer; }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover .upload-again:hover { border-color: rgb(75, 188, 252); color: rgb(75, 188, 252); }
+#publish .upload-action .upload-box .upload-box-aside .upload-cover-tip { font-size: 13px; color: rgb(204, 204, 204); padding-top: 5px; }
+#publish .upload-action .upload-box .upload-box-aside .add-other-wrap { margin-top: 20px; }
+#publish .upload-action .upload-box .upload-box-aside .add-other-wrap .add-other-list { width: 360px; }
+#publish .upload-action .upload-box .upload-box-aside .add-other-btn { width: 360px; height: 42px; border: 1px dashed rgb(204, 204, 204); text-align: center; line-height: 44px; position: relative; font-size: 14px; color: rgb(102, 102, 102); cursor: pointer; }
+#publish .upload-action .upload-box .upload-box-aside .add-other-btn img { position: absolute; width: 14px; top: 15px; left: 102px; }
+#publish .upload-action .upload-box .upload-box-aside .add-other-tip { font-size: 13px; color: rgb(204, 204, 204); padding-top: 5px; width: 370px; }
+#publish .upload-action .upload-box .upload-box-main { width: 615px; float: right; }
+#publish .upload-action .upload-box .upload-box-main .main-title .main-title-text { font-size: 15px; color: rgb(51, 51, 51); display: inline-block; width: 65px; vertical-align: top; margin-top: 9px; }
+#publish .right-con-wrap { display: inline-block; width: 532px; margin-left: 13px; position: relative; }
+#publish .upload-action .upload-box .upload-box-main .main-title .main-title-input { padding: 8px 10px; border: 1px solid rgb(221, 221, 221); font-size: 14px; width: 510px; height: 20px; color: rgb(51, 51, 51); }
+#publish .upload-action .upload-box .upload-box-main .main-title .main-title-input:hover, #publish .upload-action .upload-box .upload-box-main .main-title .main-title-input:focus { border: 1px solid rgba(1, 150, 227, 0.4); box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); }
+#publish .upload-action .upload-box .upload-box-main .main-title .main-title-tip { font-size: 13px; color: rgb(204, 204, 204); padding-top: 5px; display: block; }
+#publish .upload-action .upload-box .upload-box-main .main-title .main-title-tip a { color: rgb(68, 187, 255); }
+#publish .allow-vmovier { float: right; cursor: pointer; line-height: 15px; -moz-user-select: none; }
+#publish .allow-vmovier span { display: inline-block; vertical-align: middle; }
+#publish .allow-vmovier .allow-tip { color: rgb(0, 0, 0); padding-left: 5px; }
+#publish .allow-vmovier .allow-icon { width: 12px; height: 12px; background-image: url("58f03eaa0cc75.png"); background-repeat: no-repeat; background-size: cover; }
+#publish .upload-action .main-text { font-size: 15px; color: rgb(51, 51, 51); display: inline-block; width: 65px; vertical-align: top; margin-top: 9px; }
+.main-intro .main-text { vertical-align: top; }
+#publish .upload-action .upload-box .upload-box-main i.star { color: rgb(255, 175, 96); font-size: 16px; position: relative; top: 3px; left: -11px; }
+#publish .upload-action .upload-box .upload-box-main .public-select { display: inline-block; line-height: 36px; text-align: left; vertical-align: middle; position: relative; width: 180px; margin-right: 4px; }
+#publish .upload-action .upload-box .upload-box-main .public-select a { outline: medium none; }
+#publish .upload-action .upload-box .upload-box-main .public-select div.title { padding: 0px 25px 0px 15px; border: 1px solid rgb(221, 221, 221); position: relative; height: 100%; cursor: pointer; overflow: hidden; background-color: rgb(255, 255, 255); }
+#publish .upload-action .upload-box .upload-box-main .public-select ul.content { margin: 0px; padding: 0px; list-style: outside none none; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(197, 197, 199) rgb(197, 197, 199); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; position: absolute; overflow: auto; z-index: 100; display: none; min-width: 99%; max-height: 247px; }
+#publish .upload-action .upload-box .upload-box-main .public-select ul.content li { background: rgb(255, 255, 255) none repeat scroll 0% 0%; height: 30px; line-height: 30px; border-bottom: 1px solid white; cursor: pointer; font-size: 14px; color: rgb(51, 51, 51); padding: 0px 25px 0px 15px; white-space: nowrap; display: block; margin-bottom: 0px; }
+#publish .upload-action .upload-box .upload-box-main .public-select ul.content li:hover { color: rgb(51, 51, 51); background-color: rgb(251, 251, 251); }
+#publish .upload-action .upload-box .upload-box-main .public-select-cur { font-family: "Microsoft Yahei"; font-size: 14px; text-decoration: none; color: rgb(153, 153, 153) !important; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 150px; }
+#publish .upload-action .upload-box .upload-box-main .cur-visit-authority { width: 170px; }
+#publish .upload-action .upload-box .upload-box-main .public-select-cur:hover { color: rgb(68, 187, 255); }
+#publish .upload-action .upload-box .upload-box-main .public-select-arr { width: 15px; height: 10px; display: inline-block; position: absolute; right: 16px; top: 14px; background-size: cover; background-image: url("upload-drop_1x.png"); background-repeat: no-repeat; }
+#publish .upload-action .upload-box .upload-box-main .main-job { position: relative; }
+#publish .upload-action .upload-box .upload-box-main .main-job .job-select div.title { background: rgb(251, 251, 251) none repeat scroll 0% 0%; height: 36px; padding-left: 11px; }
+#publish .upload-action .upload-box .upload-box-main .main-job .public-select-cur { height: 100%; display: inline-block; width: auto; }
+#publish .upload-action .upload-box .upload-box-main .main-job .job-list { width: 530px; border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(221, 221, 221) rgb(221, 221, 221); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background: rgb(255, 255, 255) none repeat scroll 0% 0%; padding-bottom: 14px; position: absolute; z-index: 10; left: 0px; }
+#publish .upload-action .upload-box .upload-box-main .main-job .job-list ul { padding: 10px 0px 0px 11px; }
+#publish .upload-action .upload-box .upload-box-main .main-job .job-list li { display: inline-block; width: 80px; border: 1px dashed rgb(221, 221, 221); font-size: 14px; line-height: 22px; text-align: center; margin: 0px 10px 6px 0px; cursor: pointer; }
+#publish .upload-action .upload-box .upload-box-main .main-intro .main-intro-wrap { margin-left: 13px; display: inline-block; }
+#publish .upload-action .upload-box .upload-box-main .main-intro .main-intro-desc { height: 60px; resize: none; width: 510px; font-size: 14px; border-width: 1px; border-style: solid; border-color: rgb(221, 221, 221); overflow: auto; padding: 8px 10px; }
+#publish .upload-action .upload-box .upload-box-main .main-intro .main-intro-desc:hover, #publish .upload-action .upload-box .upload-box-main .main-intro .main-intro-desc:focus { border: 1px solid rgba(1, 150, 227, 0.4); box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); }
+#publish .upload-action .upload-box .upload-box-main .main-intro .main-intro-tip { font-size: 13px; color: rgb(204, 204, 204); padding-top: 5px; }
+#publish .upload-action .upload-extend { padding: 0px 30px 30px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#publish .upload-action .upload-extend .extend-btn { background: rgb(251, 251, 251) none repeat scroll 0% 0%; height: 43px; cursor: pointer; text-align: center; line-height: 43px; color: rgb(51, 51, 51); font-size: 14px; }
+#publish .upload-action .upload-extend .extend-btn .extend-btn-icon { width: 18px; height: 10px; display: inline-block; background-size: cover; margin-left: 8px; background-image: url("upload-extend-btn_1x.png"); background-repeat: no-repeat; }
+#publish .upload-action .upload-extend .extend-con { margin-top: 45px; display: none; }
+#publish .upload-action .upload-extend .extend-con .extend-con-aside { width: 570px; float: left; }
+#publish .upload-action .upload-extend .extend-con .extend-con-aside .extend-con-desc { height: 87px; resize: none; width: 500px; font-size: 14px; border-width: 1px; border-style: solid; border-color: rgb(221, 221, 221); overflow: auto; padding: 8px 10px; color: rgb(51, 51, 51); }
+#publish .upload-action .upload-extend .extend-con .extend-con-aside .extend-con-desc:hover, #publish .upload-action .upload-extend .extend-con .extend-con-aside .extend-con-desc:focus { border: 1px solid rgba(1, 150, 227, 0.4); box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); }
+#publish .upload-action .upload-extend .extend-con .extend-con-aside .extend-stills { margin-top: 20px; width: 680px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-aside .extend-stills-tip { font-size: 13px; color: rgb(204, 204, 204); padding-top: 5px; margin-left: 13px; }
+#uploadImg { display: inline-block; width: 135px !important; height: 37px !important; cursor: pointer; position: relative; margin-left: 8px; }
+.upload-tab, .upload-tip-p { display: none; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main { display: inline-block; width: 450px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .extent-member { margin-left: 69px; position: relative; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .extend-con-wrap { position: relative; display: inline-block; z-index: 10; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .extend-con-wrap .member-line { position: absolute; top: 9px; left: 13px; border-right: 1px solid rgb(221, 221, 221); padding-right: 9px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .extend-con-wrap .member-icon { width: 16px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .main-title-input { padding: 8px 10px 8px 45px; border: 1px solid rgb(221, 221, 221); font-size: 14px; width: 230px; height: 20px; color: rgb(51, 51, 51); vertical-align: top; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .extend-con-wrap .member-list { border: 1px solid rgb(221, 221, 221); position: absolute; top: 37px; left: 0px; padding: 15px 0px; width: 285px; max-height: 325px; overflow-y: auto; display: none; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search { border: 1px solid rgb(221, 221, 221); width: 285px; display: none; position: absolute; top: 32px; left: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; z-index: 5; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .user-avatar, .user-intro { float: left; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .user-avatar img { width: 54px; }
+.user-wrap { margin: 19px 0px 0px 11px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .user-intro { margin: 0px 0px 0px 11px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .user-intro .user-name { font-size: 14px; color: rgb(51, 51, 51); }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .user-intro .user-roles { width: 205px; margin-top: 5px; height: 24px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .role-list { padding: 20px 0px 0px 11px; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .role-list ul { margin-top: 8px; max-height: 180px; overflow-y: auto; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .role-list .role-title { font-size: 14px; color: rgb(0, 0, 0); font-weight: bold; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .role-list li { display: inline-block; width: 77px; border: 1px dashed rgb(221, 221, 221); font-size: 14px; line-height: 22px; text-align: center; margin: 0px 4px 4px 0px; cursor: pointer; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .roles-btn { width: 261px; height: 30px; background: rgb(68, 187, 255) none repeat scroll 0% 0%; line-height: 30px; font-size: 15px; text-align: center; color: rgb(255, 255, 255); border-radius: 3px; margin: 10px 0px 15px; cursor: pointer; }
+#publish .upload-action .upload-extend .extend-con .extend-con-main .user-search .roles-btn:hover { opacity: 0.8; }
+.uploader-action { padding: 38px 0px 0px 30px; width: 967px; display: inline-block; position: relative; }
+.upload-ok { position: absolute; width: 17px; height: 17px; background-size: cover; top: 39px; right: 30px; background-image: url("upload-ok_1x.png"); background-repeat: no-repeat; }
+.progress-striped { width: 883px; background: rgb(221, 221, 221) none repeat scroll 0% 0%; overflow: hidden; border-radius: 10px; display: inline-block; }
+.progressCancel { width: 17px; height: 17px; display: inline-block; background-size: cover; margin-left: 10px; cursor: pointer; background-image: url("upload-end_1x.png"); background-repeat: no-repeat; }
+.status { display: inline-block; font-size: 14px; color: rgb(68, 187, 255); vertical-align: 4px; margin-left: 12px; }
+.upload-info { color: rgb(204, 204, 204); font-size: 12px; padding-top: 5px; }
+.upload-info .upload-info-speed { padding-left: 6px; }
+.upload-info .video-name { padding-right: 10px; }
+.progress-bar-info { background: rgb(68, 187, 255) none repeat scroll 0% 0%; height: 17px; border-radius: 10px; }
+.upload-end { float: right; width: 82px; height: 100%; }
+.upload-submit { display: inline-block; padding-top: 30px; position: relative; }
+.submit-btn { width: 150px; height: 41px; background: rgb(68, 187, 255) none repeat scroll 0% 0%; border-radius: 3px; color: rgb(255, 255, 255); font-weight: bold; font-size: 15px; line-height: 41px; text-align: center; cursor: pointer; }
+.submit-btn:hover { opacity: 0.8; }
+.upload-end { position: relative; }
+.upload-nav { position: absolute; width: 45px; top: 0px; right: 0px; color: rgb(153, 153, 153); font-size: 15px; padding: 13px 11px; text-align: center; background: rgb(251, 251, 251) none repeat scroll 0% 0%; }
+.upload-nav2 { position: absolute; width: 45px; top: 0px; right: 0px; color: rgb(153, 153, 153); font-size: 15px; padding: 13px 11px; text-align: center; background: rgb(251, 251, 251) none repeat scroll 0% 0%; z-index: 2; }
+.upload-nav-addr { width: 60px; padding: 13px 11px; }
+.upload-nav:hover { color: rgb(255, 255, 255); background: rgb(68, 187, 255) none repeat scroll 0% 0%; cursor: pointer; }
+.upload-nav i, .upload-nav2 i { display: inline-block; width: 16px; height: 19px; background-size: cover; margin-top: 5px; background-image: url("upload-nav_1x.png"); background-repeat: no-repeat; }
+.upload-nav:hover i { background-position: 0px -24px; }
+.upload-item { padding-top: 15px; }
+.uploadify-queue { position: absolute; top: 60px; left: 80px; z-index: 100; padding: 2px 5px; }
+.upload-btn-bottom { background: rgb(255, 255, 255) none repeat scroll 0% 0%; padding-bottom: 30px; }
+.upload-btn-con { text-align: center; position: relative; }
+.upload-btn-con .upload-submit { padding-top: 0px; }
+#publish .upload-action .upload-box .upload-box-main .public-select ul.content-authority { padding: 10px 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; max-height: 310px; }
+#publish .upload-action .upload-box .upload-box-main .public-select ul.content-authority li { height: 20px; font-size: 14px; color: rgb(51, 51, 51); padding: 8px 25px 8px 15px; border: medium none; }
+.authority-icon-list { display: inline-block; height: 100%; font-size: 0px; vertical-align: top; }
+.authority-icon-list .authority-icon-item { background-image: url("58a2d3ee366a1.png"); display: inline-block; width: 20px; height: 20px; background-size: cover; margin-right: 5px; background-repeat: no-repeat; }
+.authority-icon-list .authority-icon-item.sign { background-position: 0px -24px; }
+.authority-icon-list .authority-icon-item.non-commercial { background-position: 0px -48px; }
+.authority-icon-list .authority-icon-item.share { background-position: 0px -72px; }
+.authority-icon-list .authority-icon-item.ban-deduction { background-position: 0px -96px; }
+.authority-icon-list .authority-icon-item.last { margin-right: 0px; }
+.authority-text { display: inline-block; height: 20px; line-height: 20px; vertical-align: top; margin-left: 8px; }
+#publish .upload-action .upload-box .upload-box-main .cur-authority { width: auto; max-height: 36px; height: 20px; padding: 10px 0px; }
+.private-notice { margin-top: 11px; color: rgb(204, 204, 204); display: none; }
+.bubble-private { background: rgb(236, 87, 87) none repeat scroll 0% 0%; color: rgb(255, 255, 255); position: absolute; left: 270px; top: 0px; width: 240px; border-radius: 4px; line-height: 1.2; padding: 12px 10px; }
+.bubble-private::after { content: ""; display: inline-block; width: 0px; height: 0px; border-top: 3px solid transparent; border-right: 10px solid rgb(236, 87, 87); border-bottom: 3px solid transparent; position: absolute; top: 16px; left: -10px; }

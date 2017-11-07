@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+
+	<script src="__JS_PATH__/jQuery-1.11.3.min.js"></script>
+
+<title>发布作品 - 新片场</title>
+
+	<link rel="stylesheet" href="__CSS_PATH__/base.css">
+	<link rel="stylesheet" href="__CSS_PATH__/font-icon.css">
+	<link rel="stylesheet" href="__CSS_PATH__/common1.css">
+	<link rel="stylesheet" href="__CSS_PATH__/font-icon.css">
+	<link rel="stylesheet" type="text/css" href="__CSS_PATH__/Huploadify.css">
+
+	<link rel="stylesheet" type="text/css" href="__CSS_PATH__/sweet-alert.css">
+	<script src="__JS_PATH__/sweet-alert.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="index-wrap clearfix ease-in-out" id="index-wrap">
+	<!-- 引入后文件-->
+	{include file='./application/index/view/index/header.html'}
+
+</div>
+<script src="about:blank"></script>
+<style>
+/* Code tidied up by ScrapBook */
+.common-notice-cover { position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 100; background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%; }
+.common-notice-cover span { display: inline-block; }
+.common-notice-cover { opacity: 0; transition: all 0.5s ease 0s; z-index: 10003; }
+.common-notice-cover-ground { width: 380px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: absolute; left: 50%; top: 50%; margin: -100px 0px 0px -190px; border-radius: 2px; }
+.common-notice-cover-ground .tip-wrap { position: relative; padding: 11px 20px 12px; border-bottom: 4px solid rgb(247, 247, 247); }
+.common-notice-cover-ground .tip-wrap .tip-title { font-size: 14px; color: rgb(51, 51, 51); }
+.common-notice-cover-ground .tip-wrap .notice-close { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; }
+.common-notice-cover-ground .tip-wrap .notice-close::before { font-size: 18px; color: rgb(0, 0, 0); }
+.common-notice-cover-ground .tip-contaniner { padding: 20px 40px; text-align: center; }
+.common-notice-cover-ground .tip-content { font-size: 14px; font-weight: 300; color: rgb(51, 51, 51); }
+.common-notice-cover-ground .tip-btn { margin-top: 30px; font-size: 0px; }
+.common-notice-cover-ground .tip-btn span { display: inline-block; width: 98px; height: 34px; font-size: 14px; font-weight: 500; line-height: 34px; border-radius: 2px; color: rgb(255, 255, 255); cursor: pointer; }
+.common-notice-cover-ground .tip-btn .close-sure { background-color: rgb(255, 255, 255); border: 0.5px solid rgba(153, 153, 153, 0.5); color: rgb(51, 51, 51); margin-right: 20px; }
+</style>
+
+<script type="text/javascript" src="about:blank"></script>
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/common_001.css">
+<link rel="stylesheet" href="__CSS_PATH__/rl_login_p.css">
+<section class="vsns clearfix"><link href="__CSS_PATH__/simple.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="__CSS_PATH__/publish_v2.css">
+<style>
+/* Code tidied up by ScrapBook */
+#file_upload_1-button, #uploadImg-button { display: inline-block; width: 135px !important; height: 37px !important; background: rgb(68, 187, 255) none repeat scroll 0% 0%; line-height: 37px !important; text-align: center; font-size: 14px; color: rgb(255, 255, 255); border-radius: 2px; padding: 0px; border: medium none; margin: 0px; }
+</style>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="publish" style="margin-top:100px;" n="">
+	<p class="publish-title">发布作品
+		<span class="form-addr-tip" style="margin-left: 10px;">新片场作品仅用于个人展示，不涉及商业用途，请确保影片自己参与，无需商业版权
+		</span>
+	</p>
+	<center>
+	<div style="border:5px dashed #66afe9 ;margin-left:20px; width:600px; ">
+		<h1>视频预览</h1>	<video src="" autoplay controls loop id="videoplay" width="600" height="340"> </video>
+	</div>
+	</center>
+	<div class="upload-before  shortHeight">
+		<div class="publish-type-main  shortHeight">
+			<div class="publish-type-1 publish-type" style="width: 100%;">
+								<div class="drag-cover dragenterSee" style="display: none;">
+					<img src="__IMAGES_PATH__/57d64f97be81a.png" class="upload-cross">
+				</div>
+
+				<div class="publish-type-con-1 publish-type-con " style="opacity: 1; top: 44%;">
+
+					<div id="" style="position: relative;">
+			            <a class="btn btn-default btn-lg " id="pickfiles" href="#" style="position: relative; z-index: 1;">
+			            	<input name="qiniu_url" value="" id="qiniu_url" type="hidden">
+			                <i class="glyphicon glyphicon-plus"></i>
+			                <input type="file" id="myvideo" onchange="uploadVideo()" name="myfile" class="publish-choice-video webuploader-pick-qiniu">上传视频</input>
+			            </a>
+			        <div id="html5_1bs76jvubtd13o8194s19hsai73_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 180px; height: 51px; overflow: hidden; z-index: 0;"><input id="html5_1bs76jvubtd13o8194s19hsai73" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="" type="file"></div></div>	  
+					<p class="upload-size-tip">（仅支持mp4类型）</p>
+				</div>
+			</div>
+			<span class="upload-before-nav active dn-normal">嵌入视频平台作品<i></i></span>
+						
+			
+					</div>
+	</div>
+
+	<div class="upload-action dn-normal" style="display: block;">
+		<div class="upload-fixed" style="display: none;">
+			<div id="container" class="uploader-action" style="display: none;">
+				<!-- <span class="well"></span> -->
+				<div id="thelist" class="uploader-list"><tr id="o_1bs76k7c2i621rd91ude46appl9" class="progressContainer green" style="opacity: 1;"><td><div class="info"><div class="progress progress-striped"><div class="progress-bar progress-bar-info" role="progressbar" aria-valuemax="100" aria-valuenow="23" aria-valuein="0" style="width: 23%;"><span class="sr-only"></span></div></div><span class="progressCancel"></span><div class="status text-center">23%</div></div></td></tr></div>
+				<span class="upload-ok dn-normal" style="display: none;"></span>
+				<div class="upload-progress"></div>
+				<div class="upload-info">
+					<span class="video-name">614ae...8d0e.mp4</span>
+					<span class="upload-info-ps">
+						<span class="upload-info-progress">4 MB/17.6 MB</span>
+						<span class="upload-info-speed">563 KB/s</span>
+					</span>
+				</div>
+			</div>
+
+		</div>
+		<div class="upload-box clearfix">
+
+
+			<div class="upload-box-aside">
+				<div id="demo">
+				<div class="small_box">
+				<img src="__IMAGES_PATH__/default.png" id="video_img" class="upload-cover-wrap" width="245" height="200">
+					<div id="smallblock"></div>
+				</div>
+
+				</div>
+				<div class="">
+					<div class="upload-cover-tip">支持JPG、JPEG、PNG</div>
+				</div>
+				<div class="add-other-wrap">
+					<ul class="add-other-list">
+										</ul>
+					<div class="add-other-btn">
+						上传封面<input type="file" id="id-publish-btn" placeholder="编辑封面"  name="myfile" onchange="uploadImage();" >
+					</div>
+				</div>
+			</div>
+			<div class="upload-box-main">
+				<div class="main-title">
+					<span class="main-title-text"><i class="star">*</i>视频标题</span>
+
+					<div class="right-con-wrap">
+						<input placeholder="输入视频的标题"  class="main-title-input" type="text">
+					</div>
+				</div>
+				<div class="main-type mt20">
+					<span class="main-text"><i class="star">*</i>选择类别</span>
+					<div class="type-select public-select" style="width: 258px; margin-right: 0px; margin-left: 13px;" id="id-first">
+						<div class="public-select" >
+							<select class="content public-select-cur" id="tag">
+								{if !empty($channel)}
+								{foreach $channel as $key =>$val}
+								<option value="{$val->id}">{$val->name}</option>
+								{/foreach}
+								{/if}
+							</select>
+						</div>
+
+					</div>
+				</div>
+				<div class="main-title">
+					<span class="main-title-text"><i class="star">*</i>积分:</span>
+
+					<div class="right-con-wrap">
+						<input placeholder="购买积分0-50,默认为0"  class="grade" type="text">
+					</div>
+				</div>
+				<div class="main-intro mt45">
+					<span class="main-text">视频简介</span>
+					<span class="main-intro-wrap">
+						<textarea class="main-intro-desc" id="summary"></textarea>
+						<div class="main-intro-tip">可以填写你的影片简介、团队介绍、拍摄器材等</div>
+					</span>
+				</div>
+
+					</div>
+				</div>	
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearfix upload-btn-bottom">
+			<div class="upload-btn-con">
+
+				<span class="upload-submit">
+					<div class="submit-btn" data-from="">发布作品</div>
+					<!--<img class="upload-loading" src="__IMAGES_PATH__/loading.gif" alt="发布中" style="vertical-align: middle;">-->
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+</body>
+<script>
+
+
+        //加载图片函数
+        function uploadImage() {
+            //获取上传的图片路径
+            var imgPath=null;
+            // FormData对象，来发送二进制文件。
+            var formdata = new FormData();
+            // 将文件追加到 formdata对象中。
+            formdata.append("myfile", document.getElementById('id-publish-btn').files[0]);
+            $.ajax({
+                type: "POST",
+                url: "{:url('/?s=index/user/uploadImg')}",
+                data: formdata,
+                /**
+                 * 必须false才会避开jQuery对 formdata 的默认处理
+                 * XMLHttpRequest会对 formdata 进行正确的处理
+                 */
+                processData: false,
+                // 告诉jQuery不要去设置Content-Type请求头
+                contentType: false,
+                dataType: "json",
+                success: function (data) {
+                    $('#video_img').attr('src',data.msg);
+                },
+            });
+
+            return imgPath;
+        }
+
+
+        //加载图片函数
+        function uploadVideo() {
+            // FormData对象，来发送二进制文件。
+            var formdata = new FormData();
+            // 将文件追加到 formdata对象中。
+            formdata.append("myfile", document.getElementById('myvideo').files[0]);
+            $.ajax({
+                type: "POST",
+                url: "{:url('/?s=index/user/uploadVideo')}",
+                data: formdata,
+                /**
+                 * 必须false才会避开jQuery对 formdata 的默认处理
+                 * XMLHttpRequest会对 formdata 进行正确的处理
+                 */
+                processData: false,
+                // 告诉jQuery不要去设置Content-Type请求头
+                contentType: false,
+                dataType: "json",
+                success: function (data) {
+                    $('#videoplay').attr('src',data.msg);
+                },
+            });
+        }
+
+
+
+		//获取封面的路径
+		var img=$('#video_img')[0].src;
+        //获取图像的路径
+		var videoPath= $('#videoplay')[0].src;
+
+		if($('#videoplay')[0].src==''){
+
+			sweetAlert('):','请上传视频','error');
+		}
+		//检测视频的标题
+		$('.main-title-input').blur(function(){
+		    if($('.main-title-input').val()==''){
+
+                sweetAlert('):','视频标题不能为空','error');
+
+			}
+		});
+		//检测积分
+		$('.grade').blur(function(){
+		   if(isNaN($('.grade').val()))
+		   {
+               sweetAlert('):','积分为数字0-50','error');
+               return ;
+		   }
+
+		   if($('.grade').val()<0 ||$('.grade').val() >50)
+		   {
+               sweetAlert('):','积分为0-50','error');
+               return ;
+		   }
+		});
+	 //检测简介
+
+	$('#summary').blur(function(){
+	    if($('#summary').val()==''){
+            sweetAlert('):','视频简介不能为空','error');
+
+		}
+	});
+		function toDb(m){
+
+            return m<10?'0'+m:m+" ";
+        }
+	//提交保存数据库
+	$('.submit-btn').click(function(){
+
+
+	    if($('#videoplay')[0].src=='' || $('.main-title-input').val()=='' || $('#summary').val()==''){
+            sweetAlert('):','视频或标题或简介不能为空','error');
+
+	        return ;
+		}
+
+		var tag=$('#tag').val();
+
+
+
+
+       var myplay=document.getElementById('videoplay');
+
+		var t=Math.floor(myplay.duration);
+        var m=parseInt(t/60);
+        var s=t%60;
+
+        var size=toDb(m)+':'+toDb(s);
+	    $.post("{:url('/?s=index/user/loadVideo')}",{
+	        "videopath":$('#videoplay')[0].src,
+			"img":$('#video_img')[0].src,
+			"title":$('.main-title-input').val(),
+			"tag":$('#tag').val(),
+			"summary":$('#summary').val(),
+			"size":size,
+			"grade":$('.grade').val()
+		},function(data){
+				if(data.status){
+				    swal('^_^',data.msg,'success');
+                    $('#video_img').attr('src','./public/static/image/default.png');
+                    $('#videoplay').attr('src','');
+                    $('#summary').val('');
+                    $('.main-title-input').val('');
+                    $('.grade').val('');
+				}else{
+                    sweetAlert('):',data.msg,'error');
+
+				}
+		});
+	});
+
+</script>
+</html>
